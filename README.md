@@ -92,3 +92,7 @@ docker compose \
 
 - Log retention and safe reading
   - See `docs/LOGGING_POLICY.md` for ephemeral log policy and how to use `_logs/READ_AND_PURGE.sh` safely.
+
+## License
+
+This project is released under the MIT License. See the `LICENSE` file at the repository root for full terms.
