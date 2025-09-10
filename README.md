@@ -89,3 +89,6 @@ docker compose \
 - Inspect compose state and logs
   - Status: `docker compose -f ai_gateway/docker-compose.stack.yml -f ai_gateway/docker-compose.pins.yml -f ai_gateway/docker-compose.health.yml ps`
   - Logs (last 200): `docker compose -f ai_gateway/docker-compose.stack.yml -f ai_gateway/docker-compose.pins.yml -f ai_gateway/docker-compose.health.yml logs --tail=200`
+
+- Log retention and safe reading
+  - See `docs/LOGGING_POLICY.md` for ephemeral log policy and how to use `_logs/READ_AND_PURGE.sh` safely.
