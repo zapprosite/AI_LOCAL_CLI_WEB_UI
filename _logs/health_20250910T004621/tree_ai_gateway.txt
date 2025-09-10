@@ -1,0 +1,130 @@
+/data/stack/ai_gateway
+├── .env
+├── .env.example
+├── .git
+│   ├── COMMIT_EDITMSG
+│   ├── HEAD
+│   ├── branches
+│   ├── config
+│   ├── description
+│   ├── hooks
+│   ├── index
+│   ├── info
+│   ├── logs
+│   ├── objects
+│   └── refs
+├── .github
+│   └── PULL_REQUEST_TEMPLATE.md
+├── .gitignore
+├── .keep_ollama_models.txt
+├── CHECK_PORTS.sh
+├── STATUS.sh
+├── UP.sh
+├── _old
+│   ├── conf_$(date +%Y%m%dT%H%M%S)
+│   ├── docker-compose.env.overlay.yml
+│   ├── docker-compose.health.yml
+│   ├── docker-compose.litellm.base.yml
+│   ├── docker-compose.litellm.cfg.yml
+│   ├── docker-compose.litellm.cmd.yml
+│   ├── docker-compose.litellm.cmdfix.yml
+│   ├── docker-compose.litellm.env.yml
+│   ├── docker-compose.litellm.fix.yml
+│   ├── docker-compose.litellm.force.yml
+│   ├── docker-compose.litellm.min.yml
+│   ├── docker-compose.litellm.only.yml
+│   ├── docker-compose.litellm.override.yml
+│   ├── docker-compose.litellm.run.yml
+│   ├── docker-compose.litellm.uvicorn.yml
+│   ├── docker-compose.litellm.var.cli.yml
+│   ├── docker-compose.litellm.var.python.yml
+│   ├── docker-compose.litellm.var.start.yml
+│   ├── docker-compose.litellm.var.uvicorn.yml
+│   ├── docker-compose.network.external.yml
+│   ├── docker-compose.network.yml
+│   ├── docker-compose.ollama.vol.yml
+│   ├── docker-compose.openwebui.yml
+│   ├── docker-compose.override.yml
+│   ├── docker-compose.pins.yml
+│   ├── docker-compose.starter-nextjs.yml
+│   ├── docker-compose.yml
+│   ├── docker-compose.yml.20250909T230704
+│   ├── litellm-config.min.yaml.disabled.1757473920
+│   ├── litellm.min.yaml
+│   ├── litellm.yaml
+│   ├── litellm.yaml.bak.disabled.1757473920
+│   ├── ollama_models.moved.1757473920
+│   ├── openwebui.moved.1757473920
+│   └── qdrant_data.moved.1757473920
+├── _out
+│   ├── scenarios_20250909T150048Z
+│   ├── scenarios_20250909T150438Z
+│   ├── scenarios_20250909T150836Z
+│   ├── scenarios_20250909T151727Z
+│   ├── scenarios_20250909T151916Z
+│   ├── scenarios_20250909T152320Z
+│   ├── scenarios_20250909T174527Z
+│   ├── stack_health_20250909T133644Z
+│   ├── stack_health_20250909T133859Z
+│   ├── stack_health_20250909T134128Z
+│   ├── stack_health_20250909T140604Z
+│   ├── stack_health_20250909T140856Z
+│   ├── stack_health_20250909T141034Z
+│   ├── stack_health_20250909T141201Z
+│   ├── stack_health_20250909T141456Z
+│   ├── stack_health_20250909T141705Z
+│   ├── stack_health_20250909T141952Z
+│   ├── stack_health_20250909T142305Z
+│   ├── stack_health_20250909T142535Z
+│   ├── stack_health_20250909T151726Z
+│   ├── stack_health_20250909T151915Z
+│   ├── stack_health_20250909T152320Z
+│   ├── stack_smoke_20250909T133644Z
+│   ├── stack_smoke_20250909T133859Z
+│   ├── stack_smoke_20250909T134129Z
+│   ├── stack_smoke_20250909T140604Z
+│   ├── stack_smoke_20250909T140857Z
+│   ├── stack_smoke_20250909T141035Z
+│   ├── stack_smoke_20250909T141201Z
+│   ├── stack_smoke_20250909T141456Z
+│   ├── stack_smoke_20250909T141705Z
+│   ├── stack_smoke_20250909T141952Z
+│   ├── stack_smoke_20250909T142305Z
+│   ├── stack_smoke_20250909T142535Z
+│   ├── stack_smoke_20250909T151726Z
+│   ├── stack_smoke_20250909T151916Z
+│   └── stack_smoke_20250909T152320Z
+├── cache
+├── config
+│   ├── litellm-config.yaml
+│   └── litellm-config.yaml.bak.20250909T120911Z
+├── docker-compose.stack.yml
+├── generate
+├── litellm
+│   └── Dockerfile
+├── litellm_config.yaml
+├── litellm_diag_now.sh
+├── logs
+├── plan
+├── requirements
+│   ├── apt-packages.txt
+│   └── requirements.txt
+├── scripts
+│   ├── health
+│   ├── pin_images.sh
+│   ├── repo_bootstrap.sh
+│   ├── req_check.sh
+│   ├── smoke
+│   ├── stack_chat_tests_v1.sh
+│   ├── stack_check_suite.sh
+│   ├── stack_net_diag.sh
+│   ├── stack_sanity_v1.sh
+│   ├── stack_scenarios_v1.sh
+│   └── ufw_lan_only.sh
+├── stack_clean_apply.sh
+├── stack_guard.sh
+├── stack_health_report.sh
+├── stack_smoke_v1.sh
+└── verify.
+
+61 directories, 67 files

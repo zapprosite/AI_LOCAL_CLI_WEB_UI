@@ -1,0 +1,23 @@
+== WHO/PWD ==
+root
+/data/stack
+== TREE ai_gateway (L2) ==
+== TREE docs (L1) ==
+== Compose config (merged) ==
+== Compose PS ==
+== Portas ==
+== Arquivos compose extras em ai_gateway/ ==
+== Configs LiteLLM fora do padrão ==
+== Orfãos deste projeto ==
+== STATUS.sh ==
+== /v1/models sem auth ==
+
+code:401
+== /v1/models com auth ==
+
+code:200
+== Logs tail (litellm,ollama,openwebui,qdrant) ==
+  saved: /data/stack/_logs/health_20250910T004617/litellm_tail.txt
+  saved: /data/stack/_logs/health_20250910T004617/ollama_tail.txt
+  saved: /data/stack/_logs/health_20250910T004617/openwebui_tail.txt
+  saved: /data/stack/_logs/health_20250910T004617/qdrant_tail.txt

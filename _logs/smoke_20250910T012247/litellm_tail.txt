@@ -1,0 +1,140 @@
+litellm-1  | INFO:     Started server process [1]
+litellm-1  | INFO:     Waiting for application startup.
+litellm-1  | 
+litellm-1  |    ██╗     ██╗████████╗███████╗██╗     ██╗     ███╗   ███╗
+litellm-1  |    ██║     ██║╚══██╔══╝██╔════╝██║     ██║     ████╗ ████║
+litellm-1  |    ██║     ██║   ██║   █████╗  ██║     ██║     ██╔████╔██║
+litellm-1  |    ██║     ██║   ██║   ██╔══╝  ██║     ██║     ██║╚██╔╝██║
+litellm-1  |    ███████╗██║   ██║   ███████╗███████╗███████╗██║ ╚═╝ ██║
+litellm-1  |    ╚══════╝╚═╝   ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝     ╚═╝
+litellm-1  | 
+litellm-1  | INFO:     Application startup complete.
+litellm-1  | INFO:     Uvicorn running on http://0.0.0.0:4000 (Press CTRL+C to quit)
+litellm-1  | 
+litellm-1  | [1;37m#------------------------------------------------------------#[0m
+litellm-1  | [1;37m#                                                            #[0m
+litellm-1  | [1;37m#            'This product would be better if...'             #[0m
+litellm-1  | [1;37m#        https://github.com/BerriAI/litellm/issues/new        #[0m
+litellm-1  | [1;37m#                                                            #[0m
+litellm-1  | [1;37m#------------------------------------------------------------#[0m
+litellm-1  | 
+litellm-1  |  Thank you for using LiteLLM! - Krrish & Ishaan
+litellm-1  | 
+litellm-1  | 
+litellm-1  | 
+litellm-1  | [1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+litellm-1  | 
+litellm-1  | 
+litellm-1  | [32mLiteLLM: Proxy initialized with Config, Set models:[0m
+litellm-1  | [32m    fast[0m
+litellm-1  | [32m    light[0m
+litellm-1  | [32m    heavy[0m
+litellm-1  | INFO:     172.22.0.1:33646 - "GET /v1/models HTTP/1.1" 200 OK
+litellm-1  | [92m04:22:50 - LiteLLM Proxy:ERROR[0m: common_request_processing.py:644 - litellm.proxy.proxy_server._handle_llm_api_exception(): Exception occured - litellm.APIConnectionError: OllamaException - {"error":"model '${MODEL_FAST}' not found"}. Received Model Group=fast
+litellm-1  | Available Model Group Fallbacks=None LiteLLM Retried: 1 times, LiteLLM Max Retries: 2
+litellm-1  | Traceback (most recent call last):
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/llms/custom_httpx/llm_http_handler.py", line 115, in _make_common_async_call
+litellm-1  |     response = await async_httpx_client.post(
+litellm-1  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+litellm-1  |     ...<10 lines>...
+litellm-1  |     )
+litellm-1  |     ^
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/litellm_core_utils/logging_utils.py", line 190, in async_wrapper
+litellm-1  |     result = await func(*args, **kwargs)
+litellm-1  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/llms/custom_httpx/http_handler.py", line 324, in post
+litellm-1  |     raise e
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/llms/custom_httpx/http_handler.py", line 280, in post
+litellm-1  |     response.raise_for_status()
+litellm-1  |     ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+litellm-1  |   File "/usr/lib/python3.13/site-packages/httpx/_models.py", line 829, in raise_for_status
+litellm-1  |     raise HTTPStatusError(message, request=request, response=self)
+litellm-1  | httpx.HTTPStatusError: Client error '404 Not Found' for url 'http://ollama:11434/api/generate'
+litellm-1  | For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/404
+litellm-1  | 
+litellm-1  | During handling of the above exception, another exception occurred:
+litellm-1  | 
+litellm-1  | Traceback (most recent call last):
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/main.py", line 546, in acompletion
+litellm-1  |     response = await init_response
+litellm-1  |                ^^^^^^^^^^^^^^^^^^^
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/llms/custom_httpx/llm_http_handler.py", line 242, in async_completion
+litellm-1  | INFO:     172.22.0.1:33650 - "POST /v1/chat/completions HTTP/1.1" 500 Internal Server Error
+litellm-1  |     response = await self._make_common_async_call(
+litellm-1  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+litellm-1  |     ...<10 lines>...
+litellm-1  |     )
+litellm-1  |     ^
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/llms/custom_httpx/llm_http_handler.py", line 140, in _make_common_async_call
+litellm-1  |     raise self._handle_error(e=e, provider_config=provider_config)
+litellm-1  |           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/llms/custom_httpx/llm_http_handler.py", line 2413, in _handle_error
+litellm-1  |     raise provider_config.get_error_class(
+litellm-1  |     ...<3 lines>...
+litellm-1  |     )
+litellm-1  | litellm.llms.ollama.common_utils.OllamaError: {"error":"model '${MODEL_FAST}' not found"}
+litellm-1  | 
+litellm-1  | During handling of the above exception, another exception occurred:
+litellm-1  | 
+litellm-1  | Traceback (most recent call last):
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/proxy_server.py", line 4092, in chat_completion
+litellm-1  |     result = await base_llm_response_processor.base_process_llm_request(
+litellm-1  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+litellm-1  |     ...<16 lines>...
+litellm-1  |     )
+litellm-1  |     ^
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/common_request_processing.py", line 438, in base_process_llm_request
+litellm-1  |     responses = await llm_responses
+litellm-1  |                 ^^^^^^^^^^^^^^^^^^^
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/router.py", line 1076, in acompletion
+litellm-1  |     raise e
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/router.py", line 1052, in acompletion
+litellm-1  |     response = await self.async_function_with_fallbacks(**kwargs)
+litellm-1  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/router.py", line 3895, in async_function_with_fallbacks
+litellm-1  |     return await self.async_function_with_fallbacks_common_utils(
+litellm-1  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+litellm-1  |     ...<8 lines>...
+litellm-1  |     )
+litellm-1  |     ^
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/router.py", line 3853, in async_function_with_fallbacks_common_utils
+litellm-1  |     raise original_exception
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/router.py", line 3887, in async_function_with_fallbacks
+litellm-1  |     response = await self.async_function_with_retries(*args, **kwargs)
+litellm-1  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/router.py", line 4092, in async_function_with_retries
+litellm-1  |     raise original_exception
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/router.py", line 3983, in async_function_with_retries
+litellm-1  |     response = await self.make_call(original_function, *args, **kwargs)
+litellm-1  |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/router.py", line 4101, in make_call
+litellm-1  |     response = await response
+litellm-1  |                ^^^^^^^^^^^^^^
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/router.py", line 1357, in _acompletion
+litellm-1  |     raise e
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/router.py", line 1309, in _acompletion
+litellm-1  |     response = await _response
+litellm-1  |                ^^^^^^^^^^^^^^^
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/utils.py", line 1598, in wrapper_async
+litellm-1  |     raise e
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/utils.py", line 1449, in wrapper_async
+litellm-1  |     result = await original_function(*args, **kwargs)
+litellm-1  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/main.py", line 565, in acompletion
+litellm-1  |     raise exception_type(
+litellm-1  |           ~~~~~~~~~~~~~~^
+litellm-1  |         model=model,
+litellm-1  |         ^^^^^^^^^^^^
+litellm-1  |     ...<3 lines>...
+litellm-1  |         extra_kwargs=kwargs,
+litellm-1  |         ^^^^^^^^^^^^^^^^^^^^
+litellm-1  |     )
+litellm-1  |     ^
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2301, in exception_type
+litellm-1  |     raise e
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/litellm_core_utils/exception_mapping_utils.py", line 2270, in exception_type
+litellm-1  |     raise APIConnectionError(
+litellm-1  |     ...<4 lines>...
+litellm-1  |     )
+litellm-1  | litellm.exceptions.APIConnectionError: litellm.APIConnectionError: OllamaException - {"error":"model '${MODEL_FAST}' not found"}. Received Model Group=fast
+litellm-1  | Available Model Group Fallbacks=None LiteLLM Retried: 1 times, LiteLLM Max Retries: 2

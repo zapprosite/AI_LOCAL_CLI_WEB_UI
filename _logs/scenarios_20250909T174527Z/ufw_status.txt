@@ -1,0 +1,44 @@
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), deny (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+Anywhere on lo             ALLOW IN    Anywhere                  
+11434/tcp                  ALLOW IN    192.168.0.0/16            
+4000/tcp                   ALLOW IN    192.168.0.0/16            
+6333/tcp                   ALLOW IN    192.168.0.0/16            
+3000/tcp                   ALLOW IN    192.168.0.0/16            
+68/udp                     ALLOW IN    67/udp                    
+546/udp                    ALLOW IN    547/udp                   
+22/tcp (OpenSSH)           ALLOW IN    Anywhere                  
+11434/tcp                  ALLOW IN    10.0.0.0/8                
+4000/tcp                   ALLOW IN    10.0.0.0/8                
+6333/tcp                   ALLOW IN    10.0.0.0/8                
+3000/tcp                   ALLOW IN    10.0.0.0/8                
+11434/tcp                  ALLOW IN    172.16.0.0/12             
+4000/tcp                   ALLOW IN    172.16.0.0/12             
+6333/tcp                   ALLOW IN    172.16.0.0/12             
+3000/tcp                   ALLOW IN    172.16.0.0/12             
+3000,4000,6333,11434/tcp   DENY IN     Anywhere                  
+Anywhere (v6) on lo        ALLOW IN    Anywhere (v6)             
+68/udp (v6)                ALLOW IN    67/udp (v6)               
+546/udp (v6)               ALLOW IN    547/udp (v6)              
+22/tcp (OpenSSH (v6))      ALLOW IN    Anywhere (v6)             
+3000,4000,6333,11434/tcp (v6) DENY IN     Anywhere (v6)             
+
+Anywhere                   ALLOW OUT   Anywhere on lo            
+192.168.0.0/16 11434/tcp   ALLOW OUT   Anywhere                  
+192.168.0.0/16 4000/tcp    ALLOW OUT   Anywhere                  
+192.168.0.0/16 6333/tcp    ALLOW OUT   Anywhere                  
+53                         ALLOW OUT   Anywhere                  
+123                        ALLOW OUT   Anywhere                  
+67/udp                     ALLOW OUT   Anywhere                  
+547/udp                    ALLOW OUT   Anywhere                  
+Anywhere (v6)              ALLOW OUT   Anywhere (v6) on lo       
+53 (v6)                    ALLOW OUT   Anywhere (v6)             
+123 (v6)                   ALLOW OUT   Anywhere (v6)             
+67/udp (v6)                ALLOW OUT   Anywhere (v6)             
+547/udp (v6)               ALLOW OUT   Anywhere (v6)             
+

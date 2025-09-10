@@ -1,0 +1,46 @@
+litellm-1  | INFO:     Started server process [1]
+litellm-1  | INFO:     Waiting for application startup.
+litellm-1  | 
+litellm-1  |    ██╗     ██╗████████╗███████╗██╗     ██╗     ███╗   ███╗
+litellm-1  |    ██║     ██║╚══██╔══╝██╔════╝██║     ██║     ████╗ ████║
+litellm-1  |    ██║     ██║   ██║   █████╗  ██║     ██║     ██╔████╔██║
+litellm-1  |    ██║     ██║   ██║   ██╔══╝  ██║     ██║     ██║╚██╔╝██║
+litellm-1  |    ███████╗██║   ██║   ███████╗███████╗███████╗██║ ╚═╝ ██║
+litellm-1  |    ╚══════╝╚═╝   ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝     ╚═╝
+litellm-1  | 
+litellm-1  | INFO:     Application startup complete.
+litellm-1  | INFO:     Uvicorn running on http://0.0.0.0:4000 (Press CTRL+C to quit)
+litellm-1  | [92m03:46:17 - LiteLLM Proxy:ERROR[0m: auth_exception_handler.py:79 - litellm.proxy.proxy_server.user_api_key_auth(): Exception occured - No api key passed in.
+litellm-1  | Requester IP Address:172.22.0.1
+litellm-1  | Traceback (most recent call last):
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/auth/user_api_key_auth.py", line 589, in _user_api_key_auth_builder
+litellm-1  |     raise Exception("No api key passed in.")
+litellm-1  | Exception: No api key passed in.
+litellm-1  | 
+litellm-1  | [1;37m#------------------------------------------------------------#[0m
+litellm-1  | [1;37m#                                                            #[0m
+litellm-1  | [1;37m#       'This feature doesn't meet my needs because...'       #[0m
+litellm-1  | [1;37m#        https://github.com/BerriAI/litellm/issues/new        #[0m
+litellm-1  | [1;37m#                                                            #[0m
+litellm-1  | [1;37m#------------------------------------------------------------#[0m
+litellm-1  | 
+litellm-1  |  Thank you for using LiteLLM! - Krrish & Ishaan
+litellm-1  | 
+litellm-1  | 
+litellm-1  | 
+litellm-1  | [1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+litellm-1  | 
+litellm-1  | 
+litellm-1  | [32mLiteLLM: Proxy initialized with Config, Set models:[0m
+litellm-1  | [32m    fast[0m
+litellm-1  | [32m    light[0m
+litellm-1  | [32m    heavy[0m
+litellm-1  | INFO:     172.22.0.1:40634 - "GET /v1/models HTTP/1.1" 401 Unauthorized
+litellm-1  | [92m03:46:17 - LiteLLM Proxy:ERROR[0m: auth_exception_handler.py:79 - litellm.proxy.proxy_server.user_api_key_auth(): Exception occured - No api key passed in.
+litellm-1  | Requester IP Address:172.22.0.1
+litellm-1  | Traceback (most recent call last):
+litellm-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/auth/user_api_key_auth.py", line 589, in _user_api_key_auth_builder
+litellm-1  |     raise Exception("No api key passed in.")
+litellm-1  | Exception: No api key passed in.
+litellm-1  | INFO:     172.22.0.1:40640 - "GET /v1/models HTTP/1.1" 401 Unauthorized
+litellm-1  | INFO:     172.22.0.1:40648 - "GET /v1/models HTTP/1.1" 200 OK

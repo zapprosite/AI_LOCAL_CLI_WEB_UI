@@ -1,0 +1,8 @@
+NAME                     IMAGE                                  COMMAND                  SERVICE     CREATED        STATUS                                     PORTS
+ai_gateway-litellm-1     ghcr.io/berriai/litellm:main-stable    "litellm --config /c…"   litellm     1 second ago   Up Less than a second (health: starting)   0.0.0.0:4000->4000/tcp, [::]:4000->4000/tcp
+ai_gateway-ollama-1      ollama/ollama:latest                   "/bin/ollama serve"      ollama      1 second ago   Up Less than a second (health: starting)   0.0.0.0:11434->11434/tcp, [::]:11434->11434/tcp
+ai_gateway-openwebui-1   ghcr.io/open-webui/open-webui:latest   "bash start.sh"          openwebui   1 second ago   Up Less than a second (health: starting)   0.0.0.0:3000->8080/tcp, [::]:3000->8080/tcp
+ai_gateway-qdrant-1      qdrant/qdrant:latest                   "./entrypoint.sh"        qdrant      1 second ago   Up Less than a second (health: starting)   0.0.0.0:6333->6333/tcp, [::]:6333->6333/tcp, 6334/tcp
+Ollama: OK (200)
+LiteLLM: FAIL (000)
+OpenWebUI: OK (000)

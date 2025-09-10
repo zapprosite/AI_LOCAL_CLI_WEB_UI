@@ -1,0 +1,1 @@
+{"error":{"message":"litellm.APIConnectionError: OllamaException - {\"error\":\"model '${MODEL_FAST}' not found\"}. Received Model Group=fast\nAvailable Model Group Fallbacks=None","type":null,"param":null,"code":"500"}}

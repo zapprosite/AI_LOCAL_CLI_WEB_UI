@@ -1,0 +1,1 @@
+{"id":"chatcmpl-5f4d759a-a22f-498c-8761-2357bf0e0e21","created":1757478546,"model":"ollama/llama3:8b","object":"chat.completion","choices":[{"finish_reason":"stop","index":0,"message":{"content":"A classic request!\n\n*PING*","role":"assistant"}}],"usage":{"completion_tokens":8,"prompt_tokens":15,"total_tokens":23}}

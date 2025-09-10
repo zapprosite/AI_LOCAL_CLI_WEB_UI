@@ -1,0 +1,32 @@
+Tue Sep  9 15:23:20 UTC 2025
+zappro
+route: default via 192.168.15.1 dev enp10s0 proto dhcp src 192.168.15.83 metric 100 
+route: 172.17.0.0/16 dev docker0 proto kernel scope link src 172.17.0.1 linkdown 
+route: 172.18.0.0/16 dev br-3c5647a893d9 proto kernel scope link src 172.18.0.1 linkdown 
+route: 172.20.0.0/16 dev br-3fa060d6b77d proto kernel scope link src 172.20.0.1 
+route: 172.21.0.0/16 dev br-3b8c54e32579 proto kernel scope link src 172.21.0.1 linkdown 
+route: 172.22.0.0/16 dev br-e3d3599ac827 proto kernel scope link src 172.22.0.1 
+route: 192.168.15.0/24 dev enp10s0 proto kernel scope link src 192.168.15.83 metric 100 
+route: 192.168.15.1 dev enp10s0 proto dhcp scope link src 192.168.15.83 metric 100 
+addr: 1: lo    inet 127.0.0.1/8 scope host lo\       valid_lft forever preferred_lft forever
+addr: 1: lo    inet6 ::1/128 scope host noprefixroute \       valid_lft forever preferred_lft forever
+addr: 2: enp10s0    inet 192.168.15.83/24 metric 100 brd 192.168.15.255 scope global dynamic enp10s0\       valid_lft 9989sec preferred_lft 9989sec
+addr: 2: enp10s0    inet6 2804:7f0:b640:19d0:ca7f:54ff:fed1:a149/64 scope global dynamic mngtmpaddr noprefixroute \       valid_lft 30403sec preferred_lft 30403sec
+addr: 2: enp10s0    inet6 fe80::ca7f:54ff:fed1:a149/64 scope link \       valid_lft forever preferred_lft forever
+addr: 3: br-3b8c54e32579    inet 172.21.0.1/16 brd 172.21.255.255 scope global br-3b8c54e32579\       valid_lft forever preferred_lft forever
+addr: 3: br-3b8c54e32579    inet6 fe80::4c65:c5ff:fec1:8d26/64 scope link \       valid_lft forever preferred_lft forever
+addr: 4: br-3c5647a893d9    inet 172.18.0.1/16 brd 172.18.255.255 scope global br-3c5647a893d9\       valid_lft forever preferred_lft forever
+addr: 5: br-3fa060d6b77d    inet 172.20.0.1/16 brd 172.20.255.255 scope global br-3fa060d6b77d\       valid_lft forever preferred_lft forever
+addr: 5: br-3fa060d6b77d    inet6 fe80::1ce6:aaff:fe6c:28fe/64 scope link \       valid_lft forever preferred_lft forever
+addr: 6: docker0    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0\       valid_lft forever preferred_lft forever
+addr: 6: docker0    inet6 fe80::44c1:65ff:fe25:70ba/64 scope link \       valid_lft forever preferred_lft forever
+addr: 8: vethd4c2313    inet6 fe80::e84b:22ff:fe91:3af5/64 scope link \       valid_lft forever preferred_lft forever
+addr: 10: veth9575e62    inet6 fe80::70e7:70ff:feac:9a8d/64 scope link \       valid_lft forever preferred_lft forever
+addr: 11: veth1492508    inet6 fe80::416:8fff:fef5:1fa/64 scope link \       valid_lft forever preferred_lft forever
+addr: 12: vethdf88856    inet6 fe80::c439:d3ff:fe36:cf60/64 scope link \       valid_lft forever preferred_lft forever
+addr: 25: br-e3d3599ac827    inet 172.22.0.1/16 brd 172.22.255.255 scope global br-e3d3599ac827\       valid_lft forever preferred_lft forever
+addr: 25: br-e3d3599ac827    inet6 fe80::10bf:baff:fe87:5575/64 scope link \       valid_lft forever preferred_lft forever
+addr: 184: veth685eb61    inet6 fe80::7c2e:76ff:fedb:5726/64 scope link \       valid_lft forever preferred_lft forever
+addr: 185: vetha7586fd    inet6 fe80::88d8:daff:fec5:f0cc/64 scope link \       valid_lft forever preferred_lft forever
+addr: 186: veth6e960e0    inet6 fe80::b40e:daff:fe06:d026/64 scope link \       valid_lft forever preferred_lft forever
+addr: 187: veth54c1ce7    inet6 fe80::98f1:24ff:fe28:1f93/64 scope link \       valid_lft forever preferred_lft forever

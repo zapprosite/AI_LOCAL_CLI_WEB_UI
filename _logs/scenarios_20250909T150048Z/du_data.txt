@@ -1,0 +1,3 @@
+81G	/data/ollama
+208K	/data/qdrant
+1.7G	/data/openwebui
