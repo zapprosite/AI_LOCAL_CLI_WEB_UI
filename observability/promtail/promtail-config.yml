@@ -1,0 +1,23 @@
+server: { http_listen_port: 9080, grpc_listen_port: 0 }
+clients: [ { url: http://loki:3100/loki/api/v1/push } ]
+positions: { filename: /tmp/positions.yaml }
+
+scrape_configs:
+  # Logs de arquivo do LiteLLM
+  - job_name: litellm_file
+    static_configs:
+      - targets: [ localhost ]
+        labels:
+          job: litellm_file
+          service: litellm
+          __path__: /data/stack/ai_gateway/logs/litellm.log
+
+  # Logs Docker (stdout JSON)
+  - job_name: docker
+    pipeline_stages:
+      - docker: {}
+    static_configs:
+      - targets: [ localhost ]
+        labels:
+          job: docker
+          __path__: /var/lib/docker/containers/*/*-json.log

@@ -1,0 +1,5 @@
+== NVME LIST ==
+Node                  Generic               SN                   Model                                    Namespace  Usage                      Format           FW Rev  
+--------------------- --------------------- -------------------- ---------------------------------------- ---------- -------------------------- ---------------- --------
+/dev/nvme0n1          /dev/ng0n1            2404E892A74D         CT4000T700SSD3                           0x1          4.00  TB /   4.00  TB    512   B +  0 B   PACR5103
+/dev/nvme1n1          /dev/ng1n1            50026B768716D856     KINGSTON SNV3S1000G                      0x1          1.00  TB /   1.00  TB    512   B +  0 B   SDS00101

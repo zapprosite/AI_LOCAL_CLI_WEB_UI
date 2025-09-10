@@ -1,0 +1,88 @@
+{
+   "blockdevices": [
+      {
+         "name": "nvme1n1",
+         "type": "disk",
+         "size": "931.5G",
+         "fstype": null,
+         "uuid": null,
+         "mountpoint": null,
+         "model": "KINGSTON SNV3S1000G",
+         "serial": "50026B768716D856",
+         "tran": "nvme",
+         "pkname": null,
+         "children": [
+            {
+               "name": "nvme1n1p1",
+               "type": "part",
+               "size": "1G",
+               "fstype": "vfat",
+               "uuid": "AE15-EE75",
+               "mountpoint": "/boot/efi",
+               "model": null,
+               "serial": null,
+               "tran": "nvme",
+               "pkname": "nvme1n1"
+            },{
+               "name": "nvme1n1p2",
+               "type": "part",
+               "size": "100G",
+               "fstype": "ext4",
+               "uuid": "7d203a1a-4008-4dbe-acf3-c8132950320e",
+               "mountpoint": "/",
+               "model": null,
+               "serial": null,
+               "tran": "nvme",
+               "pkname": "nvme1n1"
+            },{
+               "name": "nvme1n1p3",
+               "type": "part",
+               "size": "30G",
+               "fstype": "ext4",
+               "uuid": "b21db80d-8d0b-4aba-ab13-07f0b71fb3db",
+               "mountpoint": "/backup",
+               "model": null,
+               "serial": null,
+               "tran": "nvme",
+               "pkname": "nvme1n1"
+            },{
+               "name": "nvme1n1p4",
+               "type": "part",
+               "size": "800.5G",
+               "fstype": "xfs",
+               "uuid": "a634913e-935e-429e-bccc-5527eb6e79a4",
+               "mountpoint": "/var/lib/docker",
+               "model": null,
+               "serial": null,
+               "tran": "nvme",
+               "pkname": "nvme1n1"
+            }
+         ]
+      },{
+         "name": "nvme0n1",
+         "type": "disk",
+         "size": "3.6T",
+         "fstype": null,
+         "uuid": null,
+         "mountpoint": null,
+         "model": "CT4000T700SSD3",
+         "serial": "2404E892A74D",
+         "tran": "nvme",
+         "pkname": null,
+         "children": [
+            {
+               "name": "nvme0n1p1",
+               "type": "part",
+               "size": "3.6T",
+               "fstype": "xfs",
+               "uuid": "80f2540c-8642-4263-b7d7-93d19ea66ae9",
+               "mountpoint": "/data",
+               "model": null,
+               "serial": null,
+               "tran": "nvme",
+               "pkname": "nvme0n1"
+            }
+         ]
+      }
+   ]
+}

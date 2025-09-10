@@ -1,0 +1,13 @@
+[project]
+name = "langgraph-v1"
+version = "0.1.0"
+requires-python = ">=3.10"
+dependencies = [
+  "langgraph>=0.4,<0.5",
+  "langchain>=0.3,<0.4",
+  "fastapi>=0.111,<1",
+  "uvicorn[standard]>=0.30,<1",
+  "qdrant-client>=1.8,<2",
+  "litellm>=1.45,<2",
+  "sentence-transformers>=3.0,<4"  # BGE-M3
+]

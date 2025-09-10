@@ -1,0 +1,21 @@
+MODEL                STATUS     ms      SNIPPET
+task:code            FAIL       7       
+task:code            FAIL       7       
+task:code            FAIL       7       
+task:code            FAIL       7       
+task:code            FAIL       6       
+task:docs            FAIL       6       
+task:docs            FAIL       6       
+task:docs            FAIL       6       
+task:docs            FAIL       6       
+task:docs            FAIL       6       
+openai/gpt-4o        FAIL       6       
+openai/gpt-4o        FAIL       6       
+openai/gpt-4o        FAIL       5       
+openai/gpt-4o        FAIL       6       
+openai/gpt-4o        FAIL       7       
+openai/o3-pro        FAIL       6       
+openai/o3-pro        FAIL       6       
+openai/o3-pro        FAIL       7       
+openai/o3-pro        FAIL       6       
+openai/o3-pro        FAIL       6       

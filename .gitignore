@@ -1,0 +1,30 @@
+# === ENV / Segredos ===
+ai_gateway/.env
+**/.env
+!**/.env.example
+*.secret
+*.key
+*.pem
+
+# === Artefatos e logs ===
+/_out/
+/**/_out/
+**/*.log
+**/tmp/
+**/.cache/
+
+# === Python ===
+**/__pycache__/
+**/.pytest_cache/
+**/.mypy_cache/
+**/*.pyc
+
+# === Docker/Build ===
+**/.docker/
+**/docker-data/
+**/.DS_Store
+
+# === Node/NPM ===
+**/node_modules/
+**/dist/
+**/build/

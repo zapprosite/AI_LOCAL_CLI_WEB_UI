@@ -1,0 +1,31 @@
+{
+  "title": "LiteLLM — Modelos/Tarefas",
+  "schemaVersion": 39,
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "Requests por modelo",
+      "targets": [
+        { "expr": "sum by (requested_model)(rate(litellm_proxy_total_requests_metric[5m]))" }
+      ],
+      "gridPos": {"x":0,"y":0,"w":24,"h":8}
+    },
+    {
+      "type": "timeseries",
+      "title": "Falhas por modelo",
+      "targets": [
+        { "expr": "sum by (requested_model)(rate(litellm_proxy_failed_requests_metric[5m]))" }
+      ],
+      "gridPos": {"x":0,"y":8,"w":24,"h":8}
+    },
+    {
+      "type": "stat",
+      "title": "Fallbacks bem-sucedidos (últ.5m)",
+      "targets": [
+        { "expr": "sum(increase(litellm_deployment_successful_fallbacks[5m]))" }
+      ],
+      "gridPos": {"x":0,"y":16,"w":8,"h":6}
+    }
+  ],
+  "time": {"from":"now-6h","to":"now"}
+}

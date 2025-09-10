@@ -1,0 +1,9 @@
+== LSBLK ==
+NAME        TYPE   SIZE FSTYPE UUID                                 MOUNTPOINT      MODEL               SERIAL           TRAN   PKNAME
+nvme1n1     disk 931.5G                                                             KINGSTON SNV3S1000G 50026B768716D856 nvme   
+├─nvme1n1p1 part     1G vfat   AE15-EE75                            /boot/efi                                            nvme   nvme1n1
+├─nvme1n1p2 part   100G ext4   7d203a1a-4008-4dbe-acf3-c8132950320e /                                                    nvme   nvme1n1
+├─nvme1n1p3 part    30G ext4   b21db80d-8d0b-4aba-ab13-07f0b71fb3db /backup                                              nvme   nvme1n1
+└─nvme1n1p4 part 800.5G xfs    a634913e-935e-429e-bccc-5527eb6e79a4 /var/lib/docker                                      nvme   nvme1n1
+nvme0n1     disk   3.6T                                                             CT4000T700SSD3      2404E892A74D     nvme   
+└─nvme0n1p1 part   3.6T xfs    80f2540c-8642-4263-b7d7-93d19ea66ae9 /data                                                nvme   nvme0n1
