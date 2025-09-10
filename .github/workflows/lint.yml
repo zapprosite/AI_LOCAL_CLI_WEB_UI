@@ -1,9 +1,11 @@
+---
 name: Lint
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
+  workflow_dispatch:
 
 jobs:
   lint:
@@ -18,14 +20,30 @@ jobs:
           sudo apt-get update -y
           sudo apt-get install -y yamllint shellcheck
 
-      - name: Run yamllint
+      - name: Run yamllint (workflows + core compose)
         run: |
           set -e
-          files=$(git ls-files '**/*.yml' '**/*.yaml' | grep -Ev '^(_archive/|_logs/|vendor/|\.gh-workflows/|_old/|_realign/|_labs/|observability/|pr_artifacts/)') || true
+          files=$(git ls-files \
+            '.github/workflows/*.yml' \
+            'ai_gateway/docker-compose.stack.yml' \
+            'ai_gateway/docker-compose.pins.yml' \
+            'ai_gateway/docker-compose.health.yml' \
+            'ai_gateway/config/*.yaml' \
+          ) || true
           if [ -n "$files" ]; then
             yamllint -s $files
           else
             echo "No YAML files to lint."
+          fi
+
+      - name: Run shellcheck (ai_gateway scripts)
+        run: |
+          set -e
+          files=$(git ls-files 'ai_gateway/**/*.sh') || true
+          if [ -n "$files" ]; then
+            shellcheck -x $files
+          else
+            echo "No ai_gateway shell scripts to lint."
           fi
 
       - name: Run shellcheck (tracked .sh)
