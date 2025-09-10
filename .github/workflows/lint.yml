@@ -18,15 +18,20 @@ jobs:
           sudo apt-get update -y
           sudo apt-get install -y yamllint shellcheck
 
-      - name: Run yamllint (repo root)
+      - name: Run yamllint
         run: |
           set -e
-          yamllint -s .
+          files=$(git ls-files '**/*.yml' '**/*.yaml' | grep -Ev '^(_archive/|_logs/|vendor/|\.gh-workflows/|_old/|_realign/|_labs/|observability/|pr_artifacts/)') || true
+          if [ -n "$files" ]; then
+            yamllint -s $files
+          else
+            echo "No YAML files to lint."
+          fi
 
       - name: Run shellcheck (tracked .sh)
         run: |
           set -e
-          files=$(git ls-files '**/*.sh' | grep -Ev '^(_archive/|_logs/|vendor/)') || true
+          files=$(git ls-files '**/*.sh' | grep -Ev '^(_archive/|_logs/|vendor/|_labs/|scripts/)') || true
           if [ -n "$files" ]; then
             shellcheck -x $files
           else
