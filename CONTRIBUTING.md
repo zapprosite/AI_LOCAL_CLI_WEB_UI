@@ -35,3 +35,7 @@ PR checklist
 - No changes to volume mount paths under `/data/...` unless explicitly required and documented
 - CI green: lint + compose config (and smoke when labeled)
 - Link relevant context (PRD, TODOs) from `docs/INDEX.md`
+
+License
+
+Contributions are accepted under the project’s MIT License. See the `LICENSE` file at the repository root.

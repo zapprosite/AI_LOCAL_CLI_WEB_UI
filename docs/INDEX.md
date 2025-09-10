@@ -7,3 +7,7 @@ Entry point for stack documentation. Key references:
 - Deploy TODOs: [TODO_DEPLOY.md](TODO_DEPLOY.md)
 - New Chat Prompt: [NEW_CHAT_PROMPT.md](NEW_CHAT_PROMPT.md)
 - Agent Contract: [AGENT_CONTRACT.json](AGENT_CONTRACT.json)
+
+Project meta
+
+- License: [LICENSE](../LICENSE)
