@@ -36,6 +36,25 @@ PR checklist
 - CI green: lint + compose config (and smoke when labeled)
 - Link relevant context (PRD, TODOs) from `docs/INDEX.md`
 
+How to cut a release
+
+1) Ensure `main` is green (lint, compose, smoke, secrets) and docs are up to date.
+2) Update `CHANGELOG.md` with a new version section and date.
+3) Create an annotated tag and push it:
+   ```bash
+   ver=v1.0.0  # bump as needed using SemVer
+   git checkout main && git pull --ff-only
+   git tag -a "$ver" -m "chore(release): $ver"
+   git push origin "$ver"
+   ```
+4) (Optional) Open a GitHub Release and attach notes based on the changelog.
+5) Verify locally:
+   ```bash
+   git fetch --tags --force
+   git tag -l | grep -F "$ver"
+   git describe --tags --always
+   ```
+
 Secrets and environment files
 
 - Do not commit `.env` files anywhere in the repo. CI enforces this and will fail if any `.env` is tracked.
