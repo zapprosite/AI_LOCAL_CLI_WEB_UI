@@ -52,3 +52,11 @@ GOOD=$(git log --grep -F 'feat: V1 stable (compose+pins+health+smoke)' -n1 --for
 git checkout -B fix/<scope>-from-green "$GOOD"
 # ... apply minimal fix, validate, then PR ...
 ```
+
+Approvals (Code Owners)
+
+- Critical paths require at least one approval from maintainers:
+  - `ai_gateway/**`
+  - `docs/**`
+  - `.github/workflows/**`
+- This is enforced via `.github/CODEOWNERS` and branch protection with “Require review from Code Owners”.
