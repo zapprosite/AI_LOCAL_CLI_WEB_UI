@@ -20,6 +20,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Guard: block committed .env files
+        run: |
+          set -euo pipefail
+          if git ls-files | grep -E '(^|/)[.]env$' >/dev/null; then
+            echo "ERROR: .env files must not be committed. Use .env.example only." >&2
+            git ls-files | grep -E '(^|/)[.]env$' >&2
+            exit 1
+          fi
+
       - name: Set cache day
         run: echo "CACHE_DAY=$(date +%Y%m%d)" >> "$GITHUB_ENV"
 

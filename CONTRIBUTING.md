@@ -36,6 +36,12 @@ PR checklist
 - CI green: lint + compose config (and smoke when labeled)
 - Link relevant context (PRD, TODOs) from `docs/INDEX.md`
 
+Secrets and environment files
+
+- Do not commit `.env` files anywhere in the repo. CI enforces this and will fail if any `.env` is tracked.
+- Keep `.env.example` under version control for required variables.
+- Runtime data under `/data/` must not be versioned.
+
 License
 
 Contributions are accepted under the project’s MIT License. See the `LICENSE` file at the repository root.
