@@ -34,6 +34,16 @@ git checkout -B chore/runtime-restore "$GOOD"
 git push -u origin chore/runtime-restore
 ```
 
+Automation
+
+- Prefer using the helper script when available:
+
+```bash
+scripts/ROLLBACK_GREEN.sh
+```
+
+- The script creates a rescue branch from current HEAD and a `chore/runtime-restore` branch from the green anchor, then prints next steps to push and verify.
+
 Hotfix flow
 
 ```bash

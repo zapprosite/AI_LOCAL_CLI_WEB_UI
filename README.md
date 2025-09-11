@@ -93,6 +93,9 @@ docker compose \
 - Log retention and safe reading
   - See `docs/LOGGING_POLICY.md` for ephemeral log policy and how to use `_logs/READ_AND_PURGE.sh` safely.
 
+- Roll back to green anchor
+  - Use `scripts/ROLLBACK_GREEN.sh` to create a restore branch from the last green commit (`feat: V1 stable (compose+pins+health+smoke)`) and a rescue branch from current HEAD, then follow the printed steps to push and validate.
+
 ## License
 
 This project is released under the MIT License. See the `LICENSE` file at the repository root for full terms.
