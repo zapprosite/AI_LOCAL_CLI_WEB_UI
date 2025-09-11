@@ -1,3 +1,8 @@
+## [1.0.1] - 2025-09-11
+
+### Documentation
+- add CHANGELOG 1.0.0 and release process in CONTRIBUTING (d7044f5)
+
 # Changelog
 
 All notable changes to this project will be documented in this file.
