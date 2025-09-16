@@ -1,54 +1,17 @@
-# === Core ===
-/.git/
-/.gitmodules
-/.gitattributes
-/.yamllint.yml
-
-# === Large/Generated ===
-/_archive/
-/_trash/
-/_logs/
-/backups/
-/pr_artifacts/
-/_worktrees/
-/_old/
-/_realign/
-/observability/
-/pr_artifacts/*
-/data/*
-/*.tgz
-*.tgz
-*.tar
-*.zip
-
-# === App Data (not source) ===
-/ai_gateway/logs/
-/ai_gateway/requests/
-/ai_gateway/tests/tmp/
-/ai_gateway/*.db
-/openwebui/
-/qdrant/
-/ollama/
-/llm/
-
-# === Secrets ===
-/secrets/*
-!.keep_*
-
-# === Node / Python / misc ===
-node_modules/
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
+# Raiz
+_archive/
+secrets/
+*.env
+.env
+.env.*
 *.log
 *.log.*
-*.sqlite
-*.sqlite3
-*.db
-.DS_Store
-
-# === Build caches ===
-dist/
-build/
-.cache/
+# Volumes/serviços
+ai_gateway/openwebui/
+ai_gateway/qdrant/
+ai_gateway/ollama/
+ai_gateway/logs/
+# Python/node caches
+__pycache__/
+*.pyc
+node_modules/
