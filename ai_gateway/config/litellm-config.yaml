@@ -14,7 +14,6 @@ model_list:
       model: "ollama/qwen2.5-coder:14b"
       api_base: "http://ollama:11434"
       api_key: "sk-local"
-litellm_settings:
   - model_name: code.hybrid
     litellm_params:
       model: "code.hybrid"
@@ -30,6 +29,7 @@ litellm_settings:
       model: "search.hybrid"
       api_base: "http://litellm_fb:4001"
       api_key: "sk-local"
+litellm_settings:
   drop_params: true
   set_verbose: false
   num_retries: 0
