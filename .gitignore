@@ -1,35 +1,76 @@
-# === ENV / Segredos ===
-ai_gateway/.env
-**/.env
-!**/.env.example
-*.secret
-*.key
-*.pem
-
-# Host data volumes (do not version)
-/data/
-
-# === Artefatos e logs ===
-/_logs/
-/_archive/
-/_out/
-/**/_out/
-**/*.log
-**/tmp/
-**/.cache/
-
-# === Python ===
-**/__pycache__/
-**/.pytest_cache/
-**/.mypy_cache/
-**/*.pyc
-
-# === Docker/Build ===
-**/.docker/
-**/docker-data/
-**/.DS_Store
-
-# === Node/NPM ===
-**/node_modules/
-**/dist/
-**/build/
+# Raiz
+_archive/
+secrets/
+*.env
+.env
+.env.*
+*.log
+*.log.*
+# Volumes/serviços
+ai_gateway/openwebui/
+ai_gateway/qdrant/
+ai_gateway/ollama/
+ai_gateway/logs/
+# Python/node caches
+__pycache__/
+*.pyc
+node_modules/
+# Python virtual environments (global & nested)
+.venv/
+venv/
+env/
+**/.venv/
+**/venv/
+**/env/
+# Worktrees e labs efêmeros
+_worktrees/
+_labs/
+# Python cache
+__pycache__/
+*.pyc
+# Logs e artefatos locais
+_logs/
+pr_artifacts/
+*.tgz
+# Venvs (global e nested) – reforço
+.venv/
+venv/
+env/
+**/.venv/
+**/venv/
+**/env/
+# Python virtual environments (global & nested)
+.venv/
+venv/
+env/
+**/.venv/
+**/venv/
+**/env/
+# Worktrees e labs efêmeros
+_worktrees/
+_labs/
+# Python cache
+__pycache__/
+*.pyc
+# Logs e artefatos locais
+_logs/
+pr_artifacts/
+*.tgz
+# Venvs (global e nested) – reforço
+.venv/
+venv/
+env/
+**/.venv/
+**/venv/
+**/env/
+# Logs e artefatos locais
+_logs/
+pr_artifacts/
+*.tgz
+# Venvs (global e nested) – reforço
+.venv/
+venv/
+env/
+**/.venv/
+**/venv/
+**/env/

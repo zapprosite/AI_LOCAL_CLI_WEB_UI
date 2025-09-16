@@ -1,0 +1,26 @@
+# ai_gateway/docker-compose.litellm.fb.yml
+services:
+  litellm_fb:
+    image: ghcr.io/berriai/litellm:main
+    command: ["--host","0.0.0.0","--port","4000","--config","/app/config/litellm-config.yaml"]
+    environment:
+      - LITELLM_LOG=info
+      - LITELLM_MASTER_KEY=${LITELLM_MASTER_KEY}
+      - DATABASE_URL=sqlite:////tmp/litellm_fb.db
+      - LITELLM_CONFIG=/app/config/litellm-config.yaml
+    volumes:
+      - ./config:/app/config:ro
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s -H 'Authorization: Bearer ${LITELLM_MASTER_KEY}' http://localhost:4000/v1/models | jq -r '.data|length' | grep -qE '^[0-9]+'"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+    ports:
+      - "4001:4000"
+    restart: unless-stopped
+    networks:
+      - ai_stack_net
+
+networks:
+  ai_stack_net:
+    external: true

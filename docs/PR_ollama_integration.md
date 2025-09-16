@@ -1,3 +1,42 @@
+# PR_ollama_integration
+
+> **Status**: synchronized  
+> **Host**: zappro
+> **Last Audited**: 2025-09-16T06:04:13-03:00
+> **Stack Summary**:  
+> ```
+> SUMMARY :4000=200 :4001=200 MODELS4000=[fast,light,heavy] MODELS4001=[code.hybrid,docs.hybrid,search.hybrid,code.remote,docs.remote,search.remote,code.router,docs.router,search.router,openai.gpt5] fast=200 code.router=200 code.hybrid.local=200 code.hybrid.fb=200 openwebui="ai_gateway-openwebui-1	0.0.0.0:3000->8080/tcp, [::]:3000->8080/tcp" qdrant=200
+> ```
+> (audit fail)
+> (audit fail)
+> (audit fail)
+
+## Overview
+Short purpose of this document in the AI local stack (GPU + LiteLLM Router + Ollama + OpenWebUI + Qdrant). Keep it concise and actionable.
+
+## Architecture Context
+- Router (ports 4000/4001), hybrids: code/docs/search → fallback openai/gpt-5  
+- Local models via Ollama (qwen2.5-coder:14b etc.)
+- OpenWebUI as OpenAI-compatible client  
+- Vector store: Qdrant
+
+## Operations (Terminal-only)
+- Health: `ai_gateway/WAIT_HEALTH.sh`  
+- Smoke: `ai_gateway/SMOKE_NOW.sh`  
+- Final audit: `ai_gateway/FINAL_AUDIT.sh`
+
+## How to Use
+Step-by-step relevant to this document. Example requests, env vars, compose overlays.
+
+## Troubleshooting
+Common pitfalls + quick commands.
+
+## Legacy Notes
+(Original content preserved below)
+
+----
+## Legacy Notes (raw)
+
 # PR: Integração Ollama + Routers LiteLLM
 
 ## Objetivo

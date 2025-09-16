@@ -1,0 +1,49 @@
+# ai_gateway/config/litellm-config.yaml
+# LiteLLM - Config unificada (locais + híbridos)
+general_settings:
+  master_key: ${LITELLM_MASTER_KEY}
+  telemetry: false
+  num_retries: 2
+  drop_params: true
+  timeout: 120
+
+server_settings:
+  host: 0.0.0.0
+  port: 4000
+  cors: "*"
+
+model_list:
+  # ==== ALIASES LOCAIS (Ollama) ====
+  - model_name: fast
+    litellm_params:
+      model: "ollama/qwen2.5-coder:14b"
+      api_base: "http://ollama:11434"
+
+  - model_name: light
+    litellm_params:
+      model: "ollama/qwen2.5-coder:7b"
+      api_base: "http://ollama:11434"
+
+  - model_name: heavy
+    litellm_params:
+      model: "ollama/qwen2.5-coder:14b"
+      api_base: "http://ollama:11434"
+
+  # ==== HÍBRIDOS (roteados via fallback/router :4001) ====
+  - model_name: code.hybrid
+    litellm_params:
+      model: "openai.gpt5"
+      api_base: "http://litellm_fb:4001"
+      api_key: "${LITELLM_MASTER_KEY}"
+
+  - model_name: docs.hybrid
+    litellm_params:
+      model: "openai.gpt5"
+      api_base: "http://litellm_fb:4001"
+      api_key: "${LITELLM_MASTER_KEY}"
+
+  - model_name: search.hybrid
+    litellm_params:
+      model: "openai.gpt5"
+      api_base: "http://litellm_fb:4001"
+      api_key: "${LITELLM_MASTER_KEY}"
