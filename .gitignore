@@ -15,3 +15,16 @@ ai_gateway/logs/
 __pycache__/
 *.pyc
 node_modules/
+# Python virtual environments (global & nested)
+.venv/
+venv/
+env/
+**/.venv/
+**/venv/
+**/env/
+# Worktrees e labs efêmeros
+_worktrees/
+_labs/
+# Python cache
+__pycache__/
+*.pyc
