@@ -1,10 +1,16 @@
+# ai_gateway/docker-compose.openwebui.provider.yml
 services:
   openwebui:
     environment:
-      OPENAI_API_BASE_URL: http://litellm_fb:4001
-      OPENAI_API_KEY: ${LITELLM_MASTER_KEY}
-      ENABLE_OPENAI_API: "true"
-    networks: [ai_stack_net]
+      # Provider OpenAI via router fallback
+      - OPENAI_API_BASE=http://litellm_fb:4001/v1
+      - OPENAI_API_KEY=${LITELLM_MASTER_KEY}
+      - WEBUI_PROVIDER=OpenAI
+    depends_on:
+      - litellm_fb
+    networks:
+      - ai_stack_net
+
 networks:
   ai_stack_net:
     external: true

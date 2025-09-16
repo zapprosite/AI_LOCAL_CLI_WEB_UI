@@ -1,30 +1,25 @@
+# ai_gateway/docker-compose.litellm.fb.yml
 services:
   litellm_fb:
-    image: ghcr.io/berriai/litellm@sha256:222cbb6aa30f3315572a7b3c5ab22407b1e61a11a3ed4334463dbbbfa1a0f742
-    command: ["--config","/app/litellm.router.fb.yml","--port","4000","--host","0.0.0.0"]
-    env_file:
-      - /data/stack/ai_gateway/.env
-      - /data/stack/secrets/.env.openai
+    image: ghcr.io/berriai/litellm:main
+    command: ["--host","0.0.0.0","--port","4000","--config","/app/config/litellm-config.yaml"]
     environment:
-      LITELLM_CONFIG: /app/litellm.router.fb.yml
-      # DB efêmero (evita Prisma exigir Postgres)
-      LITELLM_DATABASE_URL: sqlite:////tmp/litellm_fb.db
+      - LITELLM_LOG=info
+      - LITELLM_MASTER_KEY=${LITELLM_MASTER_KEY}
+      - DATABASE_URL=sqlite:////tmp/litellm_fb.db
+      - LITELLM_CONFIG=/app/config/litellm-config.yaml
     volumes:
-      # Router dentro do container
-      - /data/stack/ai_gateway/litellm.router.fb.yml:/app/litellm.router.fb.yml:ro
-      # Mapear /tmp do container para logs no host
-      - /data/stack/ai_gateway/logs:/tmp
-    ports:
-      - "4001:4000"
-    networks: [ai_stack_net]
-    restart: unless-stopped
+      - ./config:/app/config:ro
     healthcheck:
-      # usa /bin/sh + wget (sem bash,/dev/tcp)
-      test: ["CMD-SHELL","sh -lc \"wget -qO- --header='Authorization: Bearer ${LITELLM_MASTER_KEY}' http://127.0.0.1:4000/v1/models >/dev/null 2>&1 || exit 1\""]
+      test: ["CMD-SHELL", "curl -s -H 'Authorization: Bearer ${LITELLM_MASTER_KEY}' http://localhost:4000/v1/models | jq -r '.data|length' | grep -qE '^[0-9]+'"]
       interval: 10s
       timeout: 5s
       retries: 12
-      start_period: 8s
+    ports:
+      - "4001:4000"
+    restart: unless-stopped
+    networks:
+      - ai_stack_net
 
 networks:
   ai_stack_net:
