@@ -1,0 +1,35 @@
+model_list:
+  - model_name: fast
+    litellm_params:
+      model: "ollama/qwen2.5-coder:14b"
+      api_base: "http://ollama:11434"
+      api_key: "sk-local"
+  - model_name: light
+    litellm_params:
+      model: "ollama/qwen2.5-coder:14b"
+      api_base: "http://ollama:11434"
+      api_key: "sk-local"
+  - model_name: heavy
+    litellm_params:
+      model: "ollama/qwen2.5-coder:14b"
+      api_base: "http://ollama:11434"
+      api_key: "sk-local"
+litellm_settings:
+  - model_name: code.hybrid
+    litellm_params:
+      model: "code.hybrid"
+      api_base: "http://litellm_fb:4001"
+      api_key: "sk-local"
+  - model_name: docs.hybrid
+    litellm_params:
+      model: "docs.hybrid"
+      api_base: "http://litellm_fb:4001"
+      api_key: "sk-local"
+  - model_name: search.hybrid
+    litellm_params:
+      model: "search.hybrid"
+      api_base: "http://litellm_fb:4001"
+      api_key: "sk-local"
+  drop_params: true
+  set_verbose: false
+  num_retries: 0
