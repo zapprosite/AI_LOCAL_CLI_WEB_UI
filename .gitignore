@@ -52,3 +52,25 @@ _labs/
 # Python cache
 __pycache__/
 *.pyc
+# Logs e artefatos locais
+_logs/
+pr_artifacts/
+*.tgz
+# Venvs (global e nested) – reforço
+.venv/
+venv/
+env/
+**/.venv/
+**/venv/
+**/env/
+# Logs e artefatos locais
+_logs/
+pr_artifacts/
+*.tgz
+# Venvs (global e nested) – reforço
+.venv/
+venv/
+env/
+**/.venv/
+**/venv/
+**/env/
