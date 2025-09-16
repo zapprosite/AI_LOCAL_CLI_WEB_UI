@@ -1,0 +1,13 @@
+origin	https://github.com/zapprosite/AI_LOCAL_CLI_WEB_UI.git (fetch)
+origin	https://github.com/zapprosite/AI_LOCAL_CLI_WEB_UI.git (push)
+STABLE=v1.0.0
+Your branch is up to date with 'origin/main'.
+HEAD is now at d7044f5 docs: add CHANGELOG 1.0.0 and release process in CONTRIBUTING
+d7044f5 docs: add CHANGELOG 1.0.0 and release process in CONTRIBUTING
+HEAD_SHA=d7044f55de5615541b66c5783636eb6c5241543e
+tag v1.0.0
+Tagger: Will - o Tutor de IA <zappro.ia@gmail.com>
+
+chore(release): v1.0.0
+d7044f5 2025-09-10 21:35:16 -0300  (HEAD -> main, tag: v1.0.0, origin/wip/snapshot-20250911T064904Z, origin/main, origin/chore/ignore-old-20250911T045917Z, origin/HEAD, wip/snapshot-20250911T064904Z, rescue/20250911T064905Z, rescue/20250911T064458Z, chore/repo-prune-v1, chore/ignore-old-20250911T045917Z)
+docs: add CHANGELOG 1.0.0 and release process in CONTRIBUTING

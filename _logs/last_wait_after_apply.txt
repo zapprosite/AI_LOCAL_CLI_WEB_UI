@@ -1,0 +1,8 @@
+[wait] ollama
+[ok] ollama
+[wait] litellm
+[ok] litellm
+[wait] openwebui
+[ok] openwebui
+[wait] qdrant
+[ok] qdrant

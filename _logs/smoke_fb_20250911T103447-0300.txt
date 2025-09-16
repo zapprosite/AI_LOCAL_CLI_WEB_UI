@@ -1,0 +1,9 @@
+Auth: using LITELLM_MASTER_KEY=********
+[A] List models on :4000 (base)
+[base] /v1/models HTTP 200
+fast
+heavy
+light
+[B] List models on :4001 (fallback router)
+[fb] /v1/models HTTP 200
+[C] Chat on fast@4000; expect exact '4'

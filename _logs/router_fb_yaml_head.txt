@@ -1,0 +1,55 @@
+litellm_settings:
+  request_timeout: 65
+  telemetry: false
+  set_verbose: true
+  proxy_logging: true
+  proxy_log_path: /var/log/ai_gateway/litellm_fb.log
+
+general_settings:
+  fallback_strategy:
+    - name: code.router
+      primary: code.router
+      fallbacks: [gpt5]
+      when: ["timeout", "api_error", "metadata.high_stakes"]
+    - name: docs.router
+      primary: docs.router
+      fallbacks: [gpt5]
+      when: ["timeout", "api_error", "metadata.high_stakes"]
+    - name: search.router
+      primary: search.router
+      fallbacks: [gpt5]
+      when: ["timeout", "api_error"]
+
+model_list:
+  # Primários locais
+  - model_name: code.router
+    litellm_params:
+      model: ollama/qwen2.5-coder:14b
+      api_base: http://ollama:11434
+  - model_name: docs.router
+    litellm_params:
+      model: ollama/qwen2.5:7b-instruct
+      api_base: http://ollama:11434
+  - model_name: search.router
+    litellm_params:
+      model: ollama/llama3.1:8b-instruct
+      api_base: http://ollama:11434
+
+  # Remoto
+  - model_name: gpt5
+    litellm_params:
+      model: openai/gpt-5
+
+  # Grupos híbridos (alias → primário; fallback é regido por fallback_strategy)
+  - model_name: code.hybrid
+    litellm_params:
+      model: router
+      model_list: [code.router]
+  - model_name: docs.hybrid
+    litellm_params:
+      model: router
+      model_list: [docs.router]
+  - model_name: search.hybrid
+    litellm_params:
+      model: router
+      model_list: [search.router]

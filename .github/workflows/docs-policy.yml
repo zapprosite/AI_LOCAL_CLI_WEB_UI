@@ -1,0 +1,33 @@
+name: docs-policy
+on:
+  pull_request:
+    paths:
+      - 'docs/**'
+      - '.gitignore'
+      - 'scripts/DOCPOLICY.sh'
+      - 'scripts/CI_LOCAL.sh'
+      - '.github/workflows/docs-policy.yml'
+  push:
+    branches: [ main ]
+    paths:
+      - 'docs/**'
+      - '.gitignore'
+      - 'scripts/DOCPOLICY.sh'
+      - 'scripts/CI_LOCAL.sh'
+      - '.github/workflows/docs-policy.yml'
+jobs:
+  check-docs-and-secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install ripgrep
+        run: sudo apt-get update -y && sudo apt-get install -y ripgrep
+      - name: DOCPOLICY
+        run: bash scripts/DOCPOLICY.sh
+      - name: SECRET SCAN (repo)
+        run: |
+          rg -n --hidden --ignore-file <(printf "_archive\nsecrets\n") \
+             -e 'OPENAI_API_KEY\s*=' \
+             -e 'sk-[A-Za-z0-9]{20,}' \
+             -e 'AKIA[0-9A-Z]{16}' \
+             -e '-----BEGIN (RSA|OPENSSH) PRIVATE KEY-----'

@@ -1,0 +1,19 @@
+== ps ==
+NAME      IMAGE     COMMAND   SERVICE   CREATED   STATUS    PORTS
+== Ollama tags ==
+qwen2.5-coder:14b
+deepseek-coder-v2:16b
+deepseek-coder-v2:lite
+qwen2.5-coder:7b
+qwen3-coder:latest
+llama3:8b
+== LiteLLM models ==
+ fast
+ light
+ heavy
+== Chat fast ==
+chat fast = 4
+== OpenWebUI ==
+HTTP/1.1 200 OK
+== Qdrant ==
+all shards are ready

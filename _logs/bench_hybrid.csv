@@ -1,0 +1,5 @@
+ts,model,mode,latency_ms,tokens_out
+2025-09-11T23:59:20Z,ollama/qwen2.5-coder:14b,local,7366,25
+2025-09-11T23:59:23Z,ollama/qwen2.5-coder:14b,high_stakes,3436,27
+2025-09-11T23:59:29Z,ollama/qwen2.5-coder:14b,local,3688,29
+2025-09-11T23:59:32Z,ollama/qwen2.5-coder:14b,high_stakes,2687,21

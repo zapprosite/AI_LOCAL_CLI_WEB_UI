@@ -1,0 +1,1 @@
+HEAD is now at d7044f5 docs: add CHANGELOG 1.0.0 and release process in CONTRIBUTING

@@ -1,0 +1,3 @@
+[wait] ollama
+[ok] ollama
+[wait] litellm

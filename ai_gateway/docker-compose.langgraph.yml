@@ -1,0 +1,36 @@
+services:
+  langgraph:
+    image: python:3.11-slim
+    depends_on:
+      - litellm
+      - qdrant
+    networks:
+      - ai_stack_net
+    volumes:
+      - /data/stack/langgraph_agent:/app
+    working_dir: /app
+    command: ["bash","-lc","python /app/app.py"]
+    environment:
+      LITELLM_BASE: http://litellm:4000/v1
+      LITELLM_MASTER_KEY: ${LITELLM_MASTER_KEY}
+      QDRANT_URL: http://qdrant:6333
+      QDRANT_COLL: mem_long
+      EMBED_MODEL: embed.local
+      PORT: "9099"
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >
+          python -c "import json,urllib.request,sys;
+          req=urllib.request.Request('http://localhost:9099/search',
+          data=json.dumps({'query':'hc'}).encode(),
+          headers={'Content-Type':'application/json'});
+          r=urllib.request.urlopen(req, timeout=5);
+          sys.exit(0 if r.getcode()==200 else 1)"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+    ports:
+      - "9099:9099"
+

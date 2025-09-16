@@ -1,0 +1,36 @@
+model_list:
+  - model_name: code.router
+    litellm_params:
+      model: ollama/qwen2.5-coder:14b
+      api_base: http://ollama:65535
+  - model_name: docs.router
+    litellm_params:
+      model: ollama/qwen2.5:7b-instruct
+      api_base: http://ollama:11434
+  - model_name: search.router
+    litellm_params:
+      model: ollama/llama3.1:8b-instruct
+      api_base: http://ollama:11434
+  - model_name: openai.gpt5
+    litellm_params:
+      model: openai/gpt-5
+
+general_settings:
+  fallback_strategy:
+    - name: code.router
+      primary: code.router
+      fallbacks: [openai.gpt5]
+      when: ["timeout", "api_error", "metadata.high_stakes"]
+    - name: docs.router
+      primary: docs.router
+      fallbacks: [openai.gpt5]
+      when: ["timeout", "api_error", "metadata.high_stakes"]
+    - name: search.router
+      primary: search.router
+      fallbacks: [openai.gpt5]
+      when: ["timeout", "api_error", "metadata.high_stakes"]
+
+litellm_settings:
+  request_timeout: 65
+  telemetry: false
+  set_verbose: true

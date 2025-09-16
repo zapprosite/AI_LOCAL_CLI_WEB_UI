@@ -1,0 +1,58 @@
+/data
+├── .Trash-1000
+│   ├── files
+│   └── info
+├── .pnpm-store
+│   ├── v10
+│   └── v3
+├── llm
+│   └── hf_cache
+├── ollama
+│   ├── Modelfile
+│   ├── blobs
+│   ├── id_ed25519
+│   ├── id_ed25519.pub
+│   ├── manifests
+│   └── models
+├── openwebui
+│   ├── cache
+│   ├── uploads
+│   ├── vector_db
+│   └── webui.db
+├── qdrant
+│   ├── .deleted
+│   ├── aliases
+│   ├── collections
+│   ├── data
+│   └── raft_state.json
+└── stack
+    ├── .git
+    ├── .gitattributes
+    ├── .github
+    ├── .gitignore
+    ├── .keep_data_dirs.txt
+    ├── .keep_llm_dirs.txt
+    ├── .yamllint.yml
+    ├── AGENTS.md
+    ├── CHANGELOG.md
+    ├── CONTRIBUTING.md
+    ├── LICENSE
+    ├── README.md
+    ├── _archive
+    ├── _logs
+    ├── _old
+    ├── _realign
+    ├── _worktrees
+    ├── ai_gateway
+    ├── apps
+    ├── compose.yaml
+    ├── docs
+    ├── langgraph_agent
+    ├── modelfiles
+    ├── pr_artifacts
+    ├── scripts
+    ├── secrets
+    ├── stack_minify_v1.sh
+    └── stack_realign.sh
+
+38 directories, 18 files

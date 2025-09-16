@@ -1,0 +1,15 @@
+REPOSITORY                         TAG                       DIGEST
+litellm-local                      amd64                     <none>
+ghcr.io/berriai/litellm-non_root   main-stable               sha256:78966a81e3e443bd3afc882d27c0c649fc5db2e9f58159d9efc884b6bbb47488
+ghcr.io/berriai/litellm            main-stable               sha256:222cbb6aa30f3315572a7b3c5ab22407b1e61a11a3ed4334463dbbbfa1a0f742
+ollama/ollama                      latest                    sha256:a5409cb903d30f9cd67e9f430dd336ddc9274e16fd78f75b675c42065991b4fd
+ghcr.io/open-webui/open-webui      latest                    sha256:06f4cae7f8873ebcee7952d9993e457c1b083c6bea67b10bc356db7ac71c28e2
+qdrant/qdrant                      latest                    sha256:6ac4807063bbecddca0250bfbcff52acf18c22263b904d12919349e6d0a408f1
+prom/prometheus                    latest                    sha256:63805ebb8d2b3920190daf1cb14a60871b16fd38bed42b857a3182bc621f4996
+ollama/ollama                      0.3.12                    sha256:e458178cf2c114a22e1fe954dd9a92c785d1be686578a6c073a60cf259875470
+grafana/grafana                    11.1.0                    sha256:079600c9517b678c10cda6006b4487d3174512fd4c6cface37df7822756ed7a5
+grafana/loki                       2.9.8                     sha256:8b5bd7748d0e4da66cd741ac276e485517514af0bea32167e27c0e1a95bcf8aa
+grafana/promtail                   2.9.8                     sha256:45d54f0ebd7a19acbcd4693a3227d84d27d98abe1dc7ea3068d31d5d02dbe696
+litellm/litellm                    latest                    sha256:1562c4cf3159e47113b7436e28fb370c19e8b847fea703ea01be284dc80e514b
+nvidia/cuda                        12.3.0-base-ubuntu22.04   sha256:ab701cbe9784a586949674dac46a83cd4bed19944fbc9324619317be865ea678
+ghcr.io/berriai/litellm            latest                    sha256:0284ccde2cd444563f9baec23adbfddd5e062342b17984fe83c449d5503eec0e

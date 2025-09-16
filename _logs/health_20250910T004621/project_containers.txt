@@ -1,0 +1,4 @@
+ai_gateway-openwebui-1 ghcr.io/open-webui/open-webui:latest Up Less than a second (health: starting)
+ai_gateway-litellm-1 ghcr.io/berriai/litellm:main-stable Up Less than a second (health: starting)
+ai_gateway-ollama-1 ollama/ollama:latest Up Less than a second (health: starting)
+ai_gateway-qdrant-1 qdrant/qdrant:latest Up Less than a second (health: starting)

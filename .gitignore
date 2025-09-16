@@ -1,0 +1,17 @@
+# Raiz
+_archive/
+secrets/
+*.env
+.env
+.env.*
+*.log
+*.log.*
+# Volumes/serviços
+ai_gateway/openwebui/
+ai_gateway/qdrant/
+ai_gateway/ollama/
+ai_gateway/logs/
+# Python/node caches
+__pycache__/
+*.pyc
+node_modules/

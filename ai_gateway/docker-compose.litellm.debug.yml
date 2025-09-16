@@ -1,0 +1,4 @@
+services:
+  litellm_fb:
+    environment:
+      LITELLM_VERBOSE: "true"

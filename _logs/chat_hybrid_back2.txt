@@ -1,0 +1,2 @@
+{"id":"chatcmpl-eda690ea-4bd0-4ffe-8d12-9bc437270cfc","created":1757671537,"model":"ollama/qwen2.5-coder:14b","object":"chat.completion","choices":[{"finish_reason":"stop","index":0,"message":{"content":"The answer to 2 + 2 is 4.","role":"assistant"}}],"usage":{"completion_tokens":13,"prompt_tokens":36,"total_tokens":49}}
+HTTP:200

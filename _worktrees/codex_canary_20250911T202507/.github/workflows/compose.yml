@@ -1,0 +1,58 @@
+---
+name: Compose Config
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  compose-config:
+    name: Compose (${{ matrix.variant }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    strategy:
+      fail-fast: true
+      matrix:
+        include:
+          - variant: base
+            files: |
+              docker-compose.stack.yml
+              docker-compose.pins.yml
+              docker-compose.health.yml
+          - variant: qdrant-healthfix
+            files: |
+              docker-compose.stack.yml
+              docker-compose.pins.yml
+              docker-compose.health.yml
+              docker-compose.qdrant.healthfix.yml
+            require: docker-compose.qdrant.healthfix.yml
+          - variant: litellm-healthfix
+            files: |
+              docker-compose.stack.yml
+              docker-compose.pins.yml
+              docker-compose.health.yml
+              docker-compose.litellm.healthfix.yml
+            require: docker-compose.litellm.healthfix.yml
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Docker info
+        run: |
+          docker version
+          docker compose version
+
+      - name: Validate docker compose config
+        working-directory: ai_gateway
+        run: |
+          set -euo pipefail
+          require="${{ matrix.require }}"
+          if [ -n "${require:-}" ] && [ ! -f "$require" ]; then
+            echo "Overlay '$require' not present; skipping this matrix entry."
+            exit 0
+          fi
+          files="${{ matrix.files }}"
+          cmd="docker compose"
+          for f in $files; do cmd="$cmd -f $f"; done
+          echo "Running: $cmd config"
+          eval "$cmd config"

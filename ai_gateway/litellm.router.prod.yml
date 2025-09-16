@@ -1,0 +1,8 @@
+general_settings:
+  background_health_checks: true
+  health_check_interval: 300
+router_settings:
+  max_fallbacks: 1
+litellm_settings:
+  request_timeout: 65
+  set_verbose: false

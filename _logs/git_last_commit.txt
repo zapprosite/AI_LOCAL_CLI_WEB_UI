@@ -1,0 +1,1 @@
+62b7ed9 feat: freeze V1 stack (compose+litellm YAML+smoke artifacts+pins scaffold)

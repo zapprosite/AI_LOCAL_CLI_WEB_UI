@@ -1,0 +1,7 @@
+services:
+  litellm:
+    volumes:
+      - /data/stack/ai_gateway/litellm.router.prod.yml:/app/litellm.router.prod.yml:ro
+    command: ["--config","/app/litellm.router.prod.yml","--port","4000","--host","0.0.0.0"]
+networks:
+  ai_stack_net: { external: true }

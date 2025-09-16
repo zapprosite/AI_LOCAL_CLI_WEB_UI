@@ -1,0 +1,19 @@
+== ps ==
+NAME                     IMAGE                                                                                                   COMMAND                  SERVICE     CREATED       STATUS                          PORTS
+ai_gateway-litellm-1     ghcr.io/berriai/litellm@sha256:222cbb6aa30f3315572a7b3c5ab22407b1e61a11a3ed4334463dbbbfa1a0f742         "docker/prod_entrypo…"   litellm     2 hours ago   Restarting (2) 26 seconds ago   
+ai_gateway-ollama-1      ollama/ollama@sha256:a5409cb903d30f9cd67e9f430dd336ddc9274e16fd78f75b675c42065991b4fd                   "/bin/ollama serve"      ollama      2 hours ago   Up 2 hours                      0.0.0.0:11434->11434/tcp, [::]:11434->11434/tcp
+ai_gateway-openwebui-1   ghcr.io/open-webui/open-webui@sha256:2964a606181b1db2ce45deff111fe6438f331058154a6ea5e4b01a3070a6630b   "bash start.sh"          openwebui   2 hours ago   Up 2 hours (healthy)            0.0.0.0:3000->8080/tcp, [::]:3000->8080/tcp
+ai_gateway-qdrant-1      qdrant/qdrant@sha256:6ac4807063bbecddca0250bfbcff52acf18c22263b904d12919349e6d0a408f1                   "./entrypoint.sh"        qdrant      2 hours ago   Up 2 hours (unhealthy)          0.0.0.0:6333->6333/tcp, [::]:6333->6333/tcp, 6334/tcp
+== Ollama tags ==
+qwen2.5-coder:14b
+deepseek-coder-v2:16b
+deepseek-coder-v2:lite
+qwen2.5-coder:7b
+qwen3-coder:latest
+llama3:8b
+== LiteLLM models ==
+== Chat fast ==
+== OpenWebUI ==
+HTTP/1.1 200 OK
+== Qdrant ==
+all shards are ready

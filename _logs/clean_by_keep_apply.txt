@@ -1,0 +1,34 @@
+[info] mode=apply
+[info] root=/data/stack
+[info] KEEP_ROOT.list missing; using conservative defaults
+[info] docs mode=whole
+[plan] root moves: 7
+MOVED: /data/stack/_labs -> /data/stack/_archive/20250911T072158Z/_labs
+[info] mode=apply
+[info] root=/data/stack
+[info] KEEP_ROOT.list missing; using conservative defaults
+[info] docs mode=whole
+[plan] root moves: 6
+COPIED: /data/stack/_old -> /data/stack/_archive/20250911T072256Z/_old (source retained)
+COPIED: /data/stack/_realign -> /data/stack/_archive/20250911T072256Z/_realign (source retained)
+MOVED: /data/stack/codex -> /data/stack/_archive/20250911T072256Z/codex
+MOVED: /data/stack/codex_prompts -> /data/stack/_archive/20250911T072256Z/codex_prompts
+MOVED: /data/stack/observability -> /data/stack/_archive/20250911T072256Z/observability
+MOVED: /data/stack/pr_artifacts -> /data/stack/_archive/20250911T072256Z/pr_artifacts
+[plan] ai_gateway moves: 15
+MOVED: /data/stack/ai_gateway/.github -> /data/stack/_archive/20250911T072256Z/ai_gateway/.github
+MOVED: /data/stack/ai_gateway/DIAG_SERVICES.sh -> /data/stack/_archive/20250911T072256Z/ai_gateway/DIAG_SERVICES.sh
+MOVED: /data/stack/ai_gateway/Nota: -> /data/stack/_archive/20250911T072256Z/ai_gateway/Nota:
+MOVED: /data/stack/ai_gateway/README.md -> /data/stack/_archive/20250911T072256Z/ai_gateway/README.md
+MOVED: /data/stack/ai_gateway/_logs -> /data/stack/_archive/20250911T072256Z/ai_gateway/_logs
+MOVED: /data/stack/ai_gateway/_old -> /data/stack/_archive/20250911T072256Z/ai_gateway/_old
+MOVED: /data/stack/ai_gateway/ai_gateway_backup_20250910T062020 -> /data/stack/_archive/20250911T072256Z/ai_gateway/ai_gateway_backup_20250910T062020
+MOVED: /data/stack/ai_gateway/docker-compose.impact_ui.yml -> /data/stack/_archive/20250911T072256Z/ai_gateway/docker-compose.impact_ui.yml
+MOVED: /data/stack/ai_gateway/docker-compose.litellm.cmd.yml -> /data/stack/_archive/20250911T072256Z/ai_gateway/docker-compose.litellm.cmd.yml
+MOVED: /data/stack/ai_gateway/docker-compose.litellm.entrypoint.yml -> /data/stack/_archive/20250911T072256Z/ai_gateway/docker-compose.litellm.entrypoint.yml
+MOVED: /data/stack/ai_gateway/docker-compose.litellm.healthfix.yml -> /data/stack/_archive/20250911T072256Z/ai_gateway/docker-compose.litellm.healthfix.yml
+MOVED: /data/stack/ai_gateway/docker-compose.openwebui.brand.yml -> /data/stack/_archive/20250911T072256Z/ai_gateway/docker-compose.openwebui.brand.yml
+MOVED: /data/stack/ai_gateway/docker-compose.openwebui.pin.yml -> /data/stack/_archive/20250911T072256Z/ai_gateway/docker-compose.openwebui.pin.yml
+MOVED: /data/stack/ai_gateway/docker-compose.qdrant.healthfix.yml -> /data/stack/_archive/20250911T072256Z/ai_gateway/docker-compose.qdrant.healthfix.yml
+[plan] docs moves: none (whole docs/ kept)
+[done] minify apply complete. Snapshot: /data/stack/_archive/20250911T072256Z

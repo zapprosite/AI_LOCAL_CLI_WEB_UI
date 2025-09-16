@@ -1,0 +1,9 @@
+== ps ==
+NAME                     IMAGE                                                                                                   COMMAND                  SERVICE     CREATED          STATUS                    PORTS
+ai_gateway-litellm-1     ghcr.io/berriai/litellm@sha256:222cbb6aa30f3315572a7b3c5ab22407b1e61a11a3ed4334463dbbbfa1a0f742         "docker/prod_entrypo…"   litellm     3 hours ago      Up 3 hours (unhealthy)    0.0.0.0:4000->4000/tcp, [::]:4000->4000/tcp
+ai_gateway-ollama-1      ollama/ollama@sha256:a5409cb903d30f9cd67e9f430dd336ddc9274e16fd78f75b675c42065991b4fd                   "/bin/ollama serve"      ollama      19 hours ago     Up 19 hours               0.0.0.0:11434->11434/tcp, [::]:11434->11434/tcp
+ai_gateway-openwebui-1   ghcr.io/open-webui/open-webui@sha256:2e78a2f9f6f62173ae28d2203f3c9bcdadc614023380ebbe903ea9fab772535e   "bash start.sh"          openwebui   53 minutes ago   Up 53 minutes (healthy)   0.0.0.0:3000->8080/tcp, [::]:3000->8080/tcp
+ai_gateway-qdrant-1      qdrant/qdrant@sha256:6ac4807063bbecddca0250bfbcff52acf18c22263b904d12919349e6d0a408f1                   "./entrypoint.sh"        qdrant      2 hours ago      Up 2 hours (unhealthy)    0.0.0.0:6333->6333/tcp, [::]:6333->6333/tcp, 6334/tcp
+== Ollama tags ==
+== LiteLLM models ==
+== Chat fast ==

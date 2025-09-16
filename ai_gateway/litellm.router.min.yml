@@ -1,0 +1,14 @@
+model_list:
+  - model_name: code.router
+    litellm_params:
+      model: ollama/qwen2.5-coder:14b
+      api_base: http://ollama:11434
+      timeout: 60
+      temperature: 0
+      extra_body:
+        options: { num_ctx: 8192, num_batch: 64 }
+
+litellm_settings:
+  request_timeout: 65
+  telemetry: false
+  set_verbose: true

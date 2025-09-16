@@ -1,0 +1,200 @@
+ai_gateway-litellm-fb-1  |    ██║     ██║╚══██╔══╝██╔════╝██║     ██║     ████╗ ████║
+ai_gateway-litellm-fb-1  |    ██║     ██║   ██║   █████╗  ██║     ██║     ██╔████╔██║
+ai_gateway-litellm-fb-1  |    ██║     ██║   ██║   ██╔══╝  ██║     ██║     ██║╚██╔╝██║
+ai_gateway-litellm-fb-1  |    ███████╗██║   ██║   ███████╗███████╗███████╗██║ ╚═╝ ██║
+ai_gateway-litellm-fb-1  |    ╚══════╝╚═╝   ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝     ╚═╝
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | INFO:     Application startup complete.
+ai_gateway-litellm-fb-1  | INFO:     Uvicorn running on http://0.0.0.0:4000 (Press CTRL+C to quit)
+ai_gateway-litellm-fb-1  | [92m23:47:37 - LiteLLM:WARNING[0m: utils.py:528 - `litellm.set_verbose` is deprecated. Please set `os.environ['LITELLM_LOG'] = 'DEBUG'` for debug logs.
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | [1;37m#------------------------------------------------------------#[0m
+ai_gateway-litellm-fb-1  | [1;37m#                                                            #[0m
+ai_gateway-litellm-fb-1  | [1;37m#         'The worst thing about this product is...'          #[0m
+ai_gateway-litellm-fb-1  | [1;37m#        https://github.com/BerriAI/litellm/issues/new        #[0m
+ai_gateway-litellm-fb-1  | [1;37m#                                                            #[0m
+ai_gateway-litellm-fb-1  | [1;37m#------------------------------------------------------------#[0m
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  |  Thank you for using LiteLLM! - Krrish & Ishaan
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | [1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | [32mLiteLLM: Proxy initialized with Config, Set models:[0m
+ai_gateway-litellm-fb-1  | [32m    code.router[0m
+ai_gateway-litellm-fb-1  | [32m    docs.router[0m
+ai_gateway-litellm-fb-1  | [32m    search.router[0m
+ai_gateway-litellm-fb-1  | [32m    gpt5[0m
+ai_gateway-litellm-fb-1  | [32m    code.hybrid[0m
+ai_gateway-litellm-fb-1  | [32m    docs.hybrid[0m
+ai_gateway-litellm-fb-1  | [32m    search.hybrid[0m
+ai_gateway-litellm-fb-1  | Initialized litellm callbacks, Async Success Callbacks: [<bound method Router.deployment_callback_on_success of <litellm.router.Router object at 0x73be5740c1a0>>, <litellm.proxy.hooks.model_max_budget_limiter._PROXY_VirtualKeyModelMaxBudgetLimiter object at 0x73be582102f0>, <litellm.proxy.hooks.max_budget_limiter._PROXY_MaxBudgetLimiter object at 0x73be573f1d10>, <litellm.proxy.hooks.parallel_request_limiter._PROXY_MaxParallelRequestsHandler object at 0x73be573f2c10>, <litellm.proxy.hooks.cache_control_check._PROXY_CacheControlCheck object at 0x73be573f2ad0>, <litellm_enterprise.proxy.hooks.managed_files._PROXY_LiteLLMManagedFiles object at 0x73be5740cec0>, <litellm._service_logger.ServiceLogging object at 0x73be58280b00>]
+ai_gateway-litellm-fb-1  | Inside Max Parallel Request Pre-Call Hook
+ai_gateway-litellm-fb-1  | ASYNC kwargs[caching]: False; litellm.cache: None; kwargs.get('cache'): None
+ai_gateway-litellm-fb-1  | Final returned optional params: {'temperature': 0, 'stream': False}
+ai_gateway-litellm-fb-1  | Async Wrapper: Completed Call, calling async_success_handler: <bound method Logging.async_success_handler of <litellm.litellm_core_utils.litellm_logging.Logging object at 0x73be57141940>>
+ai_gateway-litellm-fb-1  | Logging Details LiteLLM-Async Success Call, cache_hit=None
+ai_gateway-litellm-fb-1  | Async success callbacks: Got a complete streaming response
+ai_gateway-litellm-fb-1  | INSIDE parallel request limiter ASYNC SUCCESS LOGGING
+ai_gateway-litellm-fb-1  | updated_value in success call: {'current_requests': 0, 'current_tpm': 46, 'current_rpm': 1}, precise_minute: 2025-09-11-23-47
+ai_gateway-litellm-fb-1  | updated_value in success call: {'current_requests': 0, 'current_tpm': 46, 'current_rpm': 0}, precise_minute: 2025-09-11-23-47
+ai_gateway-litellm-fb-1  | updated_value in success call: {'current_requests': 0, 'current_tpm': 46, 'current_rpm': 1}, precise_minute: 2025-09-11-23-47
+ai_gateway-litellm-fb-1  | INFO:     172.22.0.1:56388 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+ai_gateway-litellm-fb-1  | INFO:     Shutting down
+ai_gateway-litellm-fb-1  | INFO:     Waiting for application shutdown.
+ai_gateway-litellm-fb-1  | INFO:     Application shutdown complete.
+ai_gateway-litellm-fb-1  | INFO:     Finished server process [1]
+ai_gateway-litellm-fb-1  | INFO:     Started server process [1]
+ai_gateway-litellm-fb-1  | INFO:     Waiting for application startup.
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  |    ██╗     ██╗████████╗███████╗██╗     ██╗     ███╗   ███╗
+ai_gateway-litellm-fb-1  |    ██║     ██║╚══██╔══╝██╔════╝██║     ██║     ████╗ ████║
+ai_gateway-litellm-fb-1  |    ██║     ██║   ██║   █████╗  ██║     ██║     ██╔████╔██║
+ai_gateway-litellm-fb-1  |    ██║     ██║   ██║   ██╔══╝  ██║     ██║     ██║╚██╔╝██║
+ai_gateway-litellm-fb-1  |    ███████╗██║   ██║   ███████╗███████╗███████╗██║ ╚═╝ ██║
+ai_gateway-litellm-fb-1  |    ╚══════╝╚═╝   ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝     ╚═╝
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | INFO:     Application startup complete.
+ai_gateway-litellm-fb-1  | INFO:     Uvicorn running on http://0.0.0.0:4000 (Press CTRL+C to quit)
+ai_gateway-litellm-fb-1  | [92m23:47:44 - LiteLLM:WARNING[0m: utils.py:528 - `litellm.set_verbose` is deprecated. Please set `os.environ['LITELLM_LOG'] = 'DEBUG'` for debug logs.
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | [1;37m#------------------------------------------------------------#[0m
+ai_gateway-litellm-fb-1  | [1;37m#                                                            #[0m
+ai_gateway-litellm-fb-1  | [1;37m#           'It would help me if you could add...'            #[0m
+ai_gateway-litellm-fb-1  | [1;37m#        https://github.com/BerriAI/litellm/issues/new        #[0m
+ai_gateway-litellm-fb-1  | [1;37m#                                                            #[0m
+ai_gateway-litellm-fb-1  | [1;37m#------------------------------------------------------------#[0m
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  |  Thank you for using LiteLLM! - Krrish & Ishaan
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | [1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | [32mLiteLLM: Proxy initialized with Config, Set models:[0m
+ai_gateway-litellm-fb-1  | [32m    code.router[0m
+ai_gateway-litellm-fb-1  | [32m    docs.router[0m
+ai_gateway-litellm-fb-1  | [32m    search.router[0m
+ai_gateway-litellm-fb-1  | [32m    gpt5[0m
+ai_gateway-litellm-fb-1  | [32m    code.hybrid[0m
+ai_gateway-litellm-fb-1  | [32m    docs.hybrid[0m
+ai_gateway-litellm-fb-1  | [32m    search.hybrid[0m
+ai_gateway-litellm-fb-1  | Initialized litellm callbacks, Async Success Callbacks: [<bound method Router.deployment_callback_on_success of <litellm.router.Router object at 0x7902d68ec1a0>>, <litellm.proxy.hooks.model_max_budget_limiter._PROXY_VirtualKeyModelMaxBudgetLimiter object at 0x7902d78e82f0>, <litellm.proxy.hooks.max_budget_limiter._PROXY_MaxBudgetLimiter object at 0x7902d68d5d10>, <litellm.proxy.hooks.parallel_request_limiter._PROXY_MaxParallelRequestsHandler object at 0x7902d68d6c10>, <litellm.proxy.hooks.cache_control_check._PROXY_CacheControlCheck object at 0x7902d68d6ad0>, <litellm_enterprise.proxy.hooks.managed_files._PROXY_LiteLLMManagedFiles object at 0x7902d68ecec0>, <litellm._service_logger.ServiceLogging object at 0x7902d7b54b00>]
+ai_gateway-litellm-fb-1  | Inside Max Parallel Request Pre-Call Hook
+ai_gateway-litellm-fb-1  | ASYNC kwargs[caching]: False; litellm.cache: None; kwargs.get('cache'): None
+ai_gateway-litellm-fb-1  | Final returned optional params: {'temperature': 0, 'stream': False}
+ai_gateway-litellm-fb-1  | Async Wrapper: Completed Call, calling async_success_handler: <bound method Logging.async_success_handler of <litellm.litellm_core_utils.litellm_logging.Logging object at 0x7902d4819940>>
+ai_gateway-litellm-fb-1  | Logging Details LiteLLM-Async Success Call, cache_hit=None
+ai_gateway-litellm-fb-1  | Async success callbacks: Got a complete streaming response
+ai_gateway-litellm-fb-1  | INSIDE parallel request limiter ASYNC SUCCESS LOGGING
+ai_gateway-litellm-fb-1  | updated_value in success call: {'current_requests': 0, 'current_tpm': 44, 'current_rpm': 1}, precise_minute: 2025-09-11-23-47
+ai_gateway-litellm-fb-1  | updated_value in success call: {'current_requests': 0, 'current_tpm': 44, 'current_rpm': 0}, precise_minute: 2025-09-11-23-47
+ai_gateway-litellm-fb-1  | updated_value in success call: {'current_requests': 0, 'current_tpm': 44, 'current_rpm': 1}, precise_minute: 2025-09-11-23-47
+ai_gateway-litellm-fb-1  | INFO:     172.22.0.1:56400 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+ai_gateway-litellm-fb-1  | INFO:     Shutting down
+ai_gateway-litellm-fb-1  | INFO:     Waiting for application shutdown.
+ai_gateway-litellm-fb-1  | INFO:     Application shutdown complete.
+ai_gateway-litellm-fb-1  | INFO:     Finished server process [1]
+ai_gateway-litellm-fb-1  | INFO:     Started server process [1]
+ai_gateway-litellm-fb-1  | INFO:     Waiting for application startup.
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  |    ██╗     ██╗████████╗███████╗██╗     ██╗     ███╗   ███╗
+ai_gateway-litellm-fb-1  |    ██║     ██║╚══██╔══╝██╔════╝██║     ██║     ████╗ ████║
+ai_gateway-litellm-fb-1  |    ██║     ██║   ██║   █████╗  ██║     ██║     ██╔████╔██║
+ai_gateway-litellm-fb-1  |    ██║     ██║   ██║   ██╔══╝  ██║     ██║     ██║╚██╔╝██║
+ai_gateway-litellm-fb-1  |    ███████╗██║   ██║   ███████╗███████╗███████╗██║ ╚═╝ ██║
+ai_gateway-litellm-fb-1  |    ╚══════╝╚═╝   ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝     ╚═╝
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | INFO:     Application startup complete.
+ai_gateway-litellm-fb-1  | INFO:     Uvicorn running on http://0.0.0.0:4000 (Press CTRL+C to quit)
+ai_gateway-litellm-fb-1  | [92m23:48:42 - LiteLLM:WARNING[0m: utils.py:528 - `litellm.set_verbose` is deprecated. Please set `os.environ['LITELLM_LOG'] = 'DEBUG'` for debug logs.
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | [1;37m#------------------------------------------------------------#[0m
+ai_gateway-litellm-fb-1  | [1;37m#                                                            #[0m
+ai_gateway-litellm-fb-1  | [1;37m#       'This feature doesn't meet my needs because...'       #[0m
+ai_gateway-litellm-fb-1  | [1;37m#        https://github.com/BerriAI/litellm/issues/new        #[0m
+ai_gateway-litellm-fb-1  | [1;37m#                                                            #[0m
+ai_gateway-litellm-fb-1  | [1;37m#------------------------------------------------------------#[0m
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  |  Thank you for using LiteLLM! - Krrish & Ishaan
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | [1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | [32mLiteLLM: Proxy initialized with Config, Set models:[0m
+ai_gateway-litellm-fb-1  | [32m    code.router[0m
+ai_gateway-litellm-fb-1  | [32m    docs.router[0m
+ai_gateway-litellm-fb-1  | [32m    search.router[0m
+ai_gateway-litellm-fb-1  | [32m    gpt5[0m
+ai_gateway-litellm-fb-1  | [32m    code.hybrid[0m
+ai_gateway-litellm-fb-1  | [32m    docs.hybrid[0m
+ai_gateway-litellm-fb-1  | [32m    search.hybrid[0m
+ai_gateway-litellm-fb-1  | Initialized litellm callbacks, Async Success Callbacks: [<bound method Router.deployment_callback_on_success of <litellm.router.Router object at 0x70cb636701a0>>, <litellm.proxy.hooks.model_max_budget_limiter._PROXY_VirtualKeyModelMaxBudgetLimiter object at 0x70cb6466c2f0>, <litellm.proxy.hooks.max_budget_limiter._PROXY_MaxBudgetLimiter object at 0x70cb63655d10>, <litellm.proxy.hooks.parallel_request_limiter._PROXY_MaxParallelRequestsHandler object at 0x70cb63656c10>, <litellm.proxy.hooks.cache_control_check._PROXY_CacheControlCheck object at 0x70cb63656ad0>, <litellm_enterprise.proxy.hooks.managed_files._PROXY_LiteLLMManagedFiles object at 0x70cb63670ec0>, <litellm._service_logger.ServiceLogging object at 0x70cb648d8b00>]
+ai_gateway-litellm-fb-1  | Inside Max Parallel Request Pre-Call Hook
+ai_gateway-litellm-fb-1  | ASYNC kwargs[caching]: False; litellm.cache: None; kwargs.get('cache'): None
+ai_gateway-litellm-fb-1  | Final returned optional params: {'temperature': 0, 'stream': False}
+ai_gateway-litellm-fb-1  | Async Wrapper: Completed Call, calling async_success_handler: <bound method Logging.async_success_handler of <litellm.litellm_core_utils.litellm_logging.Logging object at 0x70cb6159d940>>
+ai_gateway-litellm-fb-1  | Logging Details LiteLLM-Async Success Call, cache_hit=None
+ai_gateway-litellm-fb-1  | Async success callbacks: Got a complete streaming response
+ai_gateway-litellm-fb-1  | INSIDE parallel request limiter ASYNC SUCCESS LOGGING
+ai_gateway-litellm-fb-1  | updated_value in success call: {'current_requests': 0, 'current_tpm': 46, 'current_rpm': 1}, precise_minute: 2025-09-11-23-48
+ai_gateway-litellm-fb-1  | updated_value in success call: {'current_requests': 0, 'current_tpm': 46, 'current_rpm': 0}, precise_minute: 2025-09-11-23-48
+ai_gateway-litellm-fb-1  | updated_value in success call: {'current_requests': 0, 'current_tpm': 46, 'current_rpm': 1}, precise_minute: 2025-09-11-23-48
+ai_gateway-litellm-fb-1  | INFO:     172.22.0.1:51466 - "POST /v1/chat/completions HTTP/1.1" 200 OK
+ai_gateway-litellm-fb-1  | INFO:     Shutting down
+ai_gateway-litellm-fb-1  | INFO:     Waiting for application shutdown.
+ai_gateway-litellm-fb-1  | INFO:     Application shutdown complete.
+ai_gateway-litellm-fb-1  | INFO:     Finished server process [1]
+ai_gateway-litellm-fb-1  | INFO:     Started server process [1]
+ai_gateway-litellm-fb-1  | INFO:     Waiting for application startup.
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  |    ██╗     ██╗████████╗███████╗██╗     ██╗     ███╗   ███╗
+ai_gateway-litellm-fb-1  |    ██║     ██║╚══██╔══╝██╔════╝██║     ██║     ████╗ ████║
+ai_gateway-litellm-fb-1  |    ██║     ██║   ██║   █████╗  ██║     ██║     ██╔████╔██║
+ai_gateway-litellm-fb-1  |    ██║     ██║   ██║   ██╔══╝  ██║     ██║     ██║╚██╔╝██║
+ai_gateway-litellm-fb-1  |    ███████╗██║   ██║   ███████╗███████╗███████╗██║ ╚═╝ ██║
+ai_gateway-litellm-fb-1  |    ╚══════╝╚═╝   ╚═╝   ╚══════╝╚══════╝╚══════╝╚═╝     ╚═╝
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | INFO:     Application startup complete.
+ai_gateway-litellm-fb-1  | INFO:     Uvicorn running on http://0.0.0.0:4000 (Press CTRL+C to quit)
+ai_gateway-litellm-fb-1  | [92m23:48:50 - LiteLLM:WARNING[0m: utils.py:528 - `litellm.set_verbose` is deprecated. Please set `os.environ['LITELLM_LOG'] = 'DEBUG'` for debug logs.
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | [1;37m#------------------------------------------------------------#[0m
+ai_gateway-litellm-fb-1  | [1;37m#                                                            #[0m
+ai_gateway-litellm-fb-1  | [1;37m#           'I get frustrated when the product...'            #[0m
+ai_gateway-litellm-fb-1  | [1;37m#        https://github.com/BerriAI/litellm/issues/new        #[0m
+ai_gateway-litellm-fb-1  | [1;37m#                                                            #[0m
+ai_gateway-litellm-fb-1  | [1;37m#------------------------------------------------------------#[0m
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  |  Thank you for using LiteLLM! - Krrish & Ishaan
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | [1;31mGive Feedback / Get Help: https://github.com/BerriAI/litellm/issues/new[0m
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | 
+ai_gateway-litellm-fb-1  | [32mLiteLLM: Proxy initialized with Config, Set models:[0m
+ai_gateway-litellm-fb-1  | [32m    code.router[0m
+ai_gateway-litellm-fb-1  | [32m    docs.router[0m
+ai_gateway-litellm-fb-1  | [32m    search.router[0m
+ai_gateway-litellm-fb-1  | [32m    gpt5[0m
+ai_gateway-litellm-fb-1  | [32m    code.hybrid[0m
+ai_gateway-litellm-fb-1  | [32m    docs.hybrid[0m
+ai_gateway-litellm-fb-1  | [32m    search.hybrid[0m
+ai_gateway-litellm-fb-1  | Initialized litellm callbacks, Async Success Callbacks: [<bound method Router.deployment_callback_on_success of <litellm.router.Router object at 0x702e019101a0>>, <litellm.proxy.hooks.model_max_budget_limiter._PROXY_VirtualKeyModelMaxBudgetLimiter object at 0x702e029482f0>, <litellm.proxy.hooks.max_budget_limiter._PROXY_MaxBudgetLimiter object at 0x702e018f1d10>, <litellm.proxy.hooks.parallel_request_limiter._PROXY_MaxParallelRequestsHandler object at 0x702e018f2c10>, <litellm.proxy.hooks.cache_control_check._PROXY_CacheControlCheck object at 0x702e018f2ad0>, <litellm_enterprise.proxy.hooks.managed_files._PROXY_LiteLLMManagedFiles object at 0x702e01910ec0>, <litellm._service_logger.ServiceLogging object at 0x702e02bb8b00>]
+ai_gateway-litellm-fb-1  | Inside Max Parallel Request Pre-Call Hook
+ai_gateway-litellm-fb-1  | ASYNC kwargs[caching]: False; litellm.cache: None; kwargs.get('cache'): None
+ai_gateway-litellm-fb-1  | Final returned optional params: {'temperature': 0, 'stream': False}
+ai_gateway-litellm-fb-1  | Async Wrapper: Completed Call, calling async_success_handler: <bound method Logging.async_success_handler of <litellm.litellm_core_utils.litellm_logging.Logging object at 0x702dff83d940>>
+ai_gateway-litellm-fb-1  | Logging Details LiteLLM-Async Success Call, cache_hit=None
+ai_gateway-litellm-fb-1  | Async success callbacks: Got a complete streaming response
+ai_gateway-litellm-fb-1  | INSIDE parallel request limiter ASYNC SUCCESS LOGGING
+ai_gateway-litellm-fb-1  | updated_value in success call: {'current_requests': 0, 'current_tpm': 44, 'current_rpm': 1}, precise_minute: 2025-09-11-23-48
+ai_gateway-litellm-fb-1  | updated_value in success call: {'current_requests': 0, 'current_tpm': 44, 'current_rpm': 0}, precise_minute: 2025-09-11-23-48
+ai_gateway-litellm-fb-1  | updated_value in success call: {'current_requests': 0, 'current_tpm': 44, 'current_rpm': 1}, precise_minute: 2025-09-11-23-48
+ai_gateway-litellm-fb-1  | INFO:     172.22.0.1:49228 - "POST /v1/chat/completions HTTP/1.1" 200 OK

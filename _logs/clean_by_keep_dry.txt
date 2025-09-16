@@ -1,0 +1,30 @@
+[info] mode=dry
+[info] root=/data/stack
+[info] KEEP_ROOT.list missing; using conservative defaults
+[info] docs mode=whole
+[plan] root moves: 7
+DRY-MOVE: /data/stack/_labs -> /data/stack/_archive/20250911T071824Z/_labs
+DRY-MOVE: /data/stack/_old -> /data/stack/_archive/20250911T071824Z/_old
+DRY-MOVE: /data/stack/_realign -> /data/stack/_archive/20250911T071824Z/_realign
+DRY-MOVE: /data/stack/codex -> /data/stack/_archive/20250911T071824Z/codex
+DRY-MOVE: /data/stack/codex_prompts -> /data/stack/_archive/20250911T071824Z/codex_prompts
+DRY-MOVE: /data/stack/observability -> /data/stack/_archive/20250911T071824Z/observability
+DRY-MOVE: /data/stack/pr_artifacts -> /data/stack/_archive/20250911T071824Z/pr_artifacts
+[plan] ai_gateway moves: 15
+DRY-MOVE: /data/stack/ai_gateway/.github -> /data/stack/_archive/20250911T071824Z/ai_gateway/.github
+DRY-MOVE: /data/stack/ai_gateway/DIAG_SERVICES.sh -> /data/stack/_archive/20250911T071824Z/ai_gateway/DIAG_SERVICES.sh
+DRY-MOVE: /data/stack/ai_gateway/Nota: -> /data/stack/_archive/20250911T071824Z/ai_gateway/Nota:
+DRY-MOVE: /data/stack/ai_gateway/README.md -> /data/stack/_archive/20250911T071824Z/ai_gateway/README.md
+DRY-MOVE: /data/stack/ai_gateway/_logs -> /data/stack/_archive/20250911T071824Z/ai_gateway/_logs
+DRY-MOVE: /data/stack/ai_gateway/_old -> /data/stack/_archive/20250911T071824Z/ai_gateway/_old
+DRY-MOVE: /data/stack/ai_gateway/ai_gateway_backup_20250910T062020 -> /data/stack/_archive/20250911T071824Z/ai_gateway/ai_gateway_backup_20250910T062020
+DRY-MOVE: /data/stack/ai_gateway/docker-compose.impact_ui.yml -> /data/stack/_archive/20250911T071824Z/ai_gateway/docker-compose.impact_ui.yml
+DRY-MOVE: /data/stack/ai_gateway/docker-compose.litellm.cmd.yml -> /data/stack/_archive/20250911T071824Z/ai_gateway/docker-compose.litellm.cmd.yml
+DRY-MOVE: /data/stack/ai_gateway/docker-compose.litellm.entrypoint.yml -> /data/stack/_archive/20250911T071824Z/ai_gateway/docker-compose.litellm.entrypoint.yml
+DRY-MOVE: /data/stack/ai_gateway/docker-compose.litellm.healthfix.yml -> /data/stack/_archive/20250911T071824Z/ai_gateway/docker-compose.litellm.healthfix.yml
+DRY-MOVE: /data/stack/ai_gateway/docker-compose.openwebui.brand.yml -> /data/stack/_archive/20250911T071824Z/ai_gateway/docker-compose.openwebui.brand.yml
+DRY-MOVE: /data/stack/ai_gateway/docker-compose.openwebui.pin.yml -> /data/stack/_archive/20250911T071824Z/ai_gateway/docker-compose.openwebui.pin.yml
+DRY-MOVE: /data/stack/ai_gateway/docker-compose.qdrant.healthfix.yml -> /data/stack/_archive/20250911T071824Z/ai_gateway/docker-compose.qdrant.healthfix.yml
+DRY-MOVE: /data/stack/ai_gateway/.github -> /data/stack/_archive/20250911T071824Z/ai_gateway/.github
+[plan] docs moves: none (whole docs/ kept)
+[done] minify dry complete. Snapshot: /data/stack/_archive/20250911T071824Z

@@ -1,0 +1,29 @@
+== SMOKE_FB ==
+Auth: LITELLM_MASTER_KEY=***REDACTED***
+Bringing up litellm_fb (compose overlay)
+Waiting for /v1/models on :4001
+WARN: service not ready yet; continuing
+[1] List models on :4001 and assert aliases present
+GET http://localhost:4001/v1/models -> HTTP 000000
+
+FAIL /v1/models HTTP != 200
+[2] Chat on code.router (expect HTTP 200 and small answer)
+HTTP 000000
+Model (reported): 
+Content: 
+FAIL chat step 2: HTTP 000000
+[3] Chat with metadata.high_stakes=true (print backend model)
+HTTP 000000
+Backend used (model): 
+Content: 
+FAIL chat step 3: HTTP 000000
+[4] Simulate local failure for code.router (api_base -> http://ollama:65535) and assert fallback
+Mapped router file: /data/stack/ai_gateway/litellm.router.yml
+Reloading litellm_fb
+WARN: not ready yet
+HTTP 000000
+Backend used (model): 
+Content: 
+FAIL: expected fallback to openai (HTTP=000000, model=)
+[5] Restore original router and reload
+== RESULT: FAIL (4) ==

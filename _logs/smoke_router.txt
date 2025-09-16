@@ -1,0 +1,6 @@
+== /v1/models @4001 ==
+code.router
+docs.router
+search.router
+== chat code.router 2+2 ==
+FAIL: expected 4, got: {"id":"chatcmpl-80e7dcb0-80de-46fa-a3ea-e1d8fe0c8a3a","created":1757600002,"model":"ollama/qwen2.5-coder:14b","object":"chat.completion","choices":[{"finish_reason":"stop","index":0,"message":{"content":"The answer to 2 + 2 is 4, which is a single-digit number.","role":"assistant"}}],"usage":{"completion_tokens":20,"prompt_tokens":39,"total_tokens":59}}

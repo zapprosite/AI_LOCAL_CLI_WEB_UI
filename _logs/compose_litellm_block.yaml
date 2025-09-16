@@ -1,0 +1,40 @@
+  litellm:
+    command:
+      - litellm
+      - --config
+      - /config/litellm-config.yaml
+      - --host
+      - 0.0.0.0
+      - --port
+      - "4000"
+    depends_on:
+      ollama:
+        condition: service_started
+        required: true
+    environment:
+      LITELLM_MASTER_KEY: local-secret
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - curl -fsS http://localhost:4000/v1/models >/dev/null || exit 1
+      timeout: 3s
+      interval: 10s
+      retries: 10
+      start_period: 5s
+    image: ghcr.io/berriai/litellm@sha256:222cbb6aa30f3315572a7b3c5ab22407b1e61a11a3ed4334463dbbbfa1a0f742
+    networks:
+      ai_stack_net: null
+    ports:
+      - mode: ingress
+        target: 4000
+        published: "4000"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /data/stack/ai_gateway/config
+        target: /config
+        read_only: true
+        bind:
+          create_host_path: true
+  ollama:

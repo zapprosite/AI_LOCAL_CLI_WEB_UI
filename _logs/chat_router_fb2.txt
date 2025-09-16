@@ -1,0 +1,2 @@
+{"id":"chatcmpl-4b067446-c2df-4672-87b3-54b6efddae68","created":1757671535,"model":"ollama/qwen2.5-coder:14b","object":"chat.completion","choices":[{"finish_reason":"stop","index":0,"message":{"content":"Hello! How can I assist you today?","role":"assistant"}}],"usage":{"completion_tokens":10,"prompt_tokens":36,"total_tokens":46}}
+HTTP:200

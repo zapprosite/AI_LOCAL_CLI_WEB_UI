@@ -1,0 +1,45 @@
+/data
+├── .pnpm-store
+│   └── v10
+├── ollama
+│   ├── Modelfile
+│   ├── blobs
+│   ├── id_ed25519
+│   ├── id_ed25519.pub
+│   ├── manifests
+│   └── models
+├── openwebui
+│   ├── cache
+│   ├── uploads
+│   ├── vector_db
+│   └── webui.db
+├── qdrant
+│   ├── aliases
+│   ├── collections
+│   ├── data
+│   └── raft_state.json
+└── stack
+    ├── .keep_data_dirs.txt
+    ├── .keep_llm_dirs.txt
+    ├── _out
+    ├── ai_gateway
+    ├── apps
+    ├── codekb_src
+    ├── codex
+    ├── codex_prompts
+    ├── compose.yaml
+    ├── docs
+    ├── dumps
+    ├── js_v1_sbx
+    ├── langgraph_agent
+    ├── langgraph_js_template
+    ├── langgraph_js_v1
+    ├── langgraph_v1
+    ├── modelfiles
+    ├── observability
+    ├── pr_artifacts
+    ├── scripts
+    ├── stack_v1
+    └── upstream
+
+35 directories, 8 files

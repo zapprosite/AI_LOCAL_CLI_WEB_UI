@@ -1,0 +1,8 @@
+# CODEOWNERS
+# Note: Adjust the team handle below to your org's team slug.
+# Enforced when branch protection enables "Require review from Code Owners".
+
+/ai_gateway/**           @org/core-maintainers
+/docs/**                 @org/core-maintainers
+/.github/workflows/**    @org/core-maintainers
+

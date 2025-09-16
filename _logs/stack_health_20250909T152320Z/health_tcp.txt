@@ -1,0 +1,4 @@
+TCP ollama@11434: OPEN
+TCP litellm@4000: OPEN
+TCP qdrant@6333: OPEN
+TCP openwebui@3000: OPEN

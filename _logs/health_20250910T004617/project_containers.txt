@@ -1,0 +1,4 @@
+ai_gateway-openwebui-1 ghcr.io/open-webui/open-webui:latest Up 4 minutes (healthy)
+ai_gateway-litellm-1 ghcr.io/berriai/litellm:main-stable Up 4 minutes (unhealthy)
+ai_gateway-qdrant-1 qdrant/qdrant:latest Up 4 minutes (unhealthy)
+ai_gateway-ollama-1 ollama/ollama:latest Up 4 minutes (unhealthy)

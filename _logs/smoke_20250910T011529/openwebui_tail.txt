@@ -1,0 +1,32 @@
+openwebui-1  | Loading WEBUI_SECRET_KEY from file, not provided as an environment variable.
+openwebui-1  | Generating WEBUI_SECRET_KEY
+openwebui-1  | Loading WEBUI_SECRET_KEY from .webui_secret_key
+openwebui-1  | INFO  [alembic.runtime.migration] Context impl SQLiteImpl.
+openwebui-1  | INFO  [alembic.runtime.migration] Will assume non-transactional DDL.
+openwebui-1  | WARNI [open_webui.env] 
+openwebui-1  | 
+openwebui-1  | WARNING: CORS_ALLOW_ORIGIN IS SET TO '*' - NOT RECOMMENDED FOR PRODUCTION DEPLOYMENTS.
+openwebui-1  | 
+openwebui-1  | INFO  [open_webui.env] VECTOR_DB: chroma
+openwebui-1  | INFO  [open_webui.env] Embedding model set: sentence-transformers/all-MiniLM-L6-v2
+openwebui-1  | WARNI [langchain_community.utils.user_agent] USER_AGENT environment variable not set, consider setting it to identify your requests.
+openwebui-1  | 
+openwebui-1  |  ██████╗ ██████╗ ███████╗███╗   ██╗    ██╗    ██╗███████╗██████╗ ██╗   ██╗██╗
+openwebui-1  | ██╔═══██╗██╔══██╗██╔════╝████╗  ██║    ██║    ██║██╔════╝██╔══██╗██║   ██║██║
+openwebui-1  | ██║   ██║██████╔╝█████╗  ██╔██╗ ██║    ██║ █╗ ██║█████╗  ██████╔╝██║   ██║██║
+openwebui-1  | ██║   ██║██╔═══╝ ██╔══╝  ██║╚██╗██║    ██║███╗██║██╔══╝  ██╔══██╗██║   ██║██║
+openwebui-1  | ╚██████╔╝██║     ███████╗██║ ╚████║    ╚███╔███╔╝███████╗██████╔╝╚██████╔╝██║
+openwebui-1  |  ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═══╝     ╚══╝╚══╝ ╚══════╝╚═════╝  ╚═════╝ ╚═╝
+openwebui-1  | 
+openwebui-1  | 
+openwebui-1  | v0.6.26 - building the best AI user interface.
+openwebui-1  | 
+openwebui-1  | https://github.com/open-webui/open-webui
+openwebui-1  | 
+openwebui-1  | Fetching 30 files:   0%|          | 0/30 [00:00<?, ?it/s]Fetching 30 files: 100%|██████████| 30/30 [00:00<00:00, 72067.08it/s]
+openwebui-1  | INFO:     Started server process [1]
+openwebui-1  | INFO:     Waiting for application startup.
+openwebui-1  | 2025-09-10 04:15:01.937 | INFO     | open_webui.utils.logger:start_logger:162 - GLOBAL_LOG_LEVEL: INFO
+openwebui-1  | 2025-09-10 04:15:01.937 | INFO     | open_webui.main:lifespan:535 - Installing external dependencies of functions and tools...
+openwebui-1  | 2025-09-10 04:15:01.942 | INFO     | open_webui.utils.plugin:install_frontmatter_requirements:241 - No requirements found in frontmatter.
+openwebui-1  | 2025-09-10 04:15:29.552 | INFO     | uvicorn.protocols.http.httptools_impl:send:476 - 172.22.0.1:50468 - "GET / HTTP/1.1" 200

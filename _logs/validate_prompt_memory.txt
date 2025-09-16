@@ -1,0 +1,10 @@
+== VALIDATE NEW_CHAT_PROMPT.md ==
+-- arquivo encontrado:
+linhas: 11 arquivo: /data/stack/docs/NEW_CHAT_PROMPT.md
+ERRO: Seções ausentes:
+ - ROLE
+ - CONTEXT
+ - GOAL
+ - INPUT NEEDED EACH STEP
+ - OUTPUT STYLE
+ - NEXT ACTION NOW

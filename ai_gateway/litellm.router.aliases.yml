@@ -1,0 +1,12 @@
+litellm_settings:
+  request_timeout: 60
+  telemetry: false
+  set_verbose: false
+
+model_list:
+  - model_name: fast
+    litellm_params: { model: ollama/qwen2.5:7b-instruct, api_base: http://ollama:11434 }
+  - model_name: light
+    litellm_params: { model: ollama/llama3.1:8b-instruct, api_base: http://ollama:11434 }
+  - model_name: heavy
+    litellm_params: { model: ollama/qwen2.5-coder:14b, api_base: http://ollama:11434 }

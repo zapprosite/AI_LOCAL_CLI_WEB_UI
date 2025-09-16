@@ -1,0 +1,45 @@
+services:
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    restart: always
+    networks: [ai_stack]
+    ports: ["9090:9090"]
+    volumes:
+      - /data/stack/observability/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+
+  loki:
+    image: grafana/loki:2.9.8
+    container_name: loki
+    restart: always
+    networks: [ai_stack]
+    ports: ["3100:3100"]
+    volumes:
+      - /data/stack/observability/loki/loki-config.yml:/etc/loki/config.yml:ro
+    command: -config.file=/etc/loki/config.yml
+
+  promtail:
+    image: grafana/promtail:2.9.8
+    container_name: promtail
+    restart: always
+    networks: [ai_stack]
+    volumes:
+      - /data/stack/observability/promtail/promtail-config.yml:/etc/promtail/config.yml:ro
+      - /var/lib/docker/containers:/var/lib/docker/containers:ro
+      - /data/stack/ai_gateway/logs:/data/stack/ai_gateway/logs:ro
+    command: -config.file=/etc/promtail/config.yml
+
+  grafana:
+    image: grafana/grafana:11.1.0
+    container_name: grafana
+    restart: always
+    networks: [ai_stack]
+    ports: ["3001:3000"]
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    depends_on: [prometheus, loki]
+
+networks:
+  ai_stack:
+    external: true

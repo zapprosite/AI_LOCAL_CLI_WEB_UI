@@ -1,0 +1,5 @@
+PASS ollama/tags
+PASS litellm/models
+PASS qdrant/readyz
+PASS qdrant/collections
+FAIL openwebui/root

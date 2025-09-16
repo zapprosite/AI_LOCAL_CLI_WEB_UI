@@ -1,0 +1,13 @@
+== PRECHECK models @4001 ==
+code.router
+docs.router
+search.router
+
+== CTRL: chat sem fallback (deve usar ollama) ==
+ollama/qwen2.5-coder:14b
+4
+
+== INJECT: pause ollama ==
+ai_gateway-ollama-1
+
+== TEST: chat com fallback forçado ==

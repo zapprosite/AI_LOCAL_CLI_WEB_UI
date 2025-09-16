@@ -1,0 +1,11 @@
+== Pulling required tags ==
+
+== ollama list ==
+NAME                      ID              SIZE      MODIFIED               
+qwen2.5:7b-instruct       845dbda0ea48    4.7 GB    Less than a second ago    
+qwen2.5-coder:14b         9ec8897f747e    9.0 GB    Less than a second ago    
+deepseek-coder-v2:16b     63fb193b3a9b    8.9 GB    3 days ago                
+deepseek-coder-v2:lite    63fb193b3a9b    8.9 GB    3 days ago                
+qwen2.5-coder:7b          dae161e27b0e    4.7 GB    3 days ago                
+qwen3-coder:latest        ad67f85ca250    18 GB     3 days ago                
+llama3:8b                 365c0bd3c000    4.7 GB    4 days ago                

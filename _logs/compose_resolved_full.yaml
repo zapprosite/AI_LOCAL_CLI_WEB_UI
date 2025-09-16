@@ -1,0 +1,115 @@
+name: ai_gateway
+services:
+  litellm:
+    command:
+      - litellm
+      - --config
+      - /config/litellm-config.yaml
+      - --host
+      - 0.0.0.0
+      - --port
+      - "4000"
+    depends_on:
+      ollama:
+        condition: service_started
+        required: true
+    environment:
+      LITELLM_MASTER_KEY: local-secret
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - bash -lc 'exec 3<>/dev/tcp/127.0.0.1/4000; printf "GET /v1/models HTTP/1.0\r\n\r\n" >&3; head -c 200 <&3 | grep -q "id"'
+      timeout: 3s
+      interval: 10s
+      retries: 10
+      start_period: 15s
+    image: ghcr.io/berriai/litellm@sha256:222cbb6aa30f3315572a7b3c5ab22407b1e61a11a3ed4334463dbbbfa1a0f742
+    networks:
+      ai_stack_net: null
+    ports:
+      - mode: ingress
+        target: 4000
+        published: "4000"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /data/stack/ai_gateway/config
+        target: /config
+        read_only: true
+        bind:
+          create_host_path: true
+  ollama:
+    image: ollama/ollama@sha256:a5409cb903d30f9cd67e9f430dd336ddc9274e16fd78f75b675c42065991b4fd
+    networks:
+      ai_stack_net: null
+    ports:
+      - mode: ingress
+        target: 11434
+        published: "11434"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /data/ollama
+        target: /root/.ollama
+        bind:
+          create_host_path: true
+  openwebui:
+    depends_on:
+      ollama:
+        condition: service_started
+        required: true
+    environment:
+      OLLAMA_BASE_URL: http://ollama:11434
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - 'bash -lc ''exec 3<>/dev/tcp/127.0.0.1/8080; printf "GET / HTTP/1.1\r\nHost: localhost\r\n\r\n" >&3; head -n1 <&3 | grep -q "200"'''
+      timeout: 3s
+      interval: 15s
+      retries: 10
+      start_period: 10s
+    image: ghcr.io/open-webui/open-webui@sha256:2e78a2f9f6f62173ae28d2203f3c9bcdadc614023380ebbe903ea9fab772535e
+    networks:
+      ai_stack_net: null
+    ports:
+      - mode: ingress
+        target: 8080
+        published: "3000"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /data/openwebui
+        target: /app/backend/data
+        bind:
+          create_host_path: true
+  qdrant:
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - bash -lc 'exec 3<>/dev/tcp/127.0.0.1/6333; printf "GET /readyz HTTP/1.0\r\n\r\n" >&3; head -c 200 <&3 | grep -q "all shards are ready"'
+      timeout: 3s
+      interval: 10s
+      retries: 10
+      start_period: 20s
+    image: qdrant/qdrant@sha256:6ac4807063bbecddca0250bfbcff52acf18c22263b904d12919349e6d0a408f1
+    networks:
+      ai_stack_net: null
+    ports:
+      - mode: ingress
+        target: 6333
+        published: "6333"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /data/qdrant
+        target: /qdrant/storage
+        bind:
+          create_host_path: true
+networks:
+  ai_stack_net:
+    name: ai_stack_net
+    external: true

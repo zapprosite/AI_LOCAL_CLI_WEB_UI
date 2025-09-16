@@ -1,0 +1,120 @@
+name: ai_gateway
+services:
+  litellm:
+    command:
+      - litellm
+      - --config
+      - /config/litellm-config.yaml
+      - --host
+      - 0.0.0.0
+      - --port
+      - "4000"
+    depends_on:
+      ollama:
+        condition: service_started
+        required: true
+    entrypoint:
+      - ""
+    environment:
+      LITELLM_MASTER_KEY: sk-local-bridge
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - 'curl -sf -H ''Authorization: Bearer sk-local-bridge'' http://127.0.0.1:4000/v1/models >/dev/null'
+      timeout: 3s
+      interval: 10s
+      retries: 20
+      start_period: 10s
+    image: ghcr.io/berriai/litellm:main-stable
+    networks:
+      ai_stack_net: null
+    ports:
+      - mode: ingress
+        target: 4000
+        published: "4000"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /data/stack/ai_gateway/config
+        target: /config
+        read_only: true
+        bind:
+          create_host_path: true
+  ollama:
+    command:
+      - serve
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - curl -sf http://127.0.0.1:11434/api/tags >/dev/null
+      timeout: 3s
+      interval: 10s
+      retries: 10
+      start_period: 10s
+    image: ollama/ollama:latest
+    networks:
+      ai_stack_net: null
+    ports:
+      - mode: ingress
+        target: 11434
+        published: "11434"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /data/ollama
+        target: /root/.ollama
+        bind:
+          create_host_path: true
+  openwebui:
+    depends_on:
+      litellm:
+        condition: service_started
+        required: true
+    environment:
+      OPENAI_API_BASE_URL: http://litellm:4000
+      OPENAI_API_KEY: sk-local-bridge
+    image: ghcr.io/open-webui/open-webui:latest
+    networks:
+      ai_stack_net: null
+    ports:
+      - mode: ingress
+        target: 8080
+        published: "3000"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /data/openwebui
+        target: /app/backend/data
+        bind:
+          create_host_path: true
+  qdrant:
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - curl -sf http://127.0.0.1:6333/readyz >/dev/null
+      timeout: 3s
+      interval: 10s
+      retries: 20
+      start_period: 10s
+    image: qdrant/qdrant:latest
+    networks:
+      ai_stack_net: null
+    ports:
+      - mode: ingress
+        target: 6333
+        published: "6333"
+        protocol: tcp
+    restart: unless-stopped
+    volumes:
+      - type: bind
+        source: /data/qdrant/data
+        target: /qdrant/storage
+        bind:
+          create_host_path: true
+networks:
+  ai_stack_net:
+    name: ai_stack_net
+    external: true

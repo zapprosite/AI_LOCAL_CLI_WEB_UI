@@ -1,0 +1,116 @@
+---
+name: Lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  lint:
+    name: Lint (${{ matrix.tool }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: true
+      matrix:
+        tool: [yamllint, shellcheck]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Guard: block committed .env files
+        run: |
+          set -euo pipefail
+          if git ls-files | grep -E '(^|/)[.]env$' >/dev/null; then
+            echo "ERROR: .env files must not be committed. Use .env.example only." >&2
+            git ls-files | grep -E '(^|/)[.]env$' >&2
+            exit 1
+          fi
+
+      - name: Set cache day
+        run: echo "CACHE_DAY=$(date +%Y%m%d)" >> "$GITHUB_ENV"
+
+      - name: Cache apt packages (optional)
+        uses: actions/cache@v4
+        with:
+          path: |
+            /var/cache/apt
+            /var/lib/apt/lists
+          key: apt-${{ runner.os }}-${{ matrix.tool }}-${{ env.CACHE_DAY }}
+
+      - name: Install yamllint (apt)
+        if: matrix.tool == 'yamllint'
+        run: |
+          set -euo pipefail
+          sudo apt-get update -y
+          sudo apt-get install -y yamllint
+
+      - name: Cache yamllint user cache
+        if: matrix.tool == 'yamllint'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/yamllint
+          key: yamllint-${{ runner.os }}-v1
+
+      - name: Install or restore shellcheck
+        if: matrix.tool == 'shellcheck'
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME/.cache/shellcheck/bin"
+          if [ -x "$HOME/.cache/shellcheck/bin/shellcheck" ]; then
+            echo "$HOME/.cache/shellcheck/bin" >> "$GITHUB_PATH"
+            shellcheck --version
+          else
+            sudo apt-get update -y
+            sudo apt-get install -y shellcheck
+            cp "$(command -v shellcheck)" "$HOME/.cache/shellcheck/bin/"
+            echo "$HOME/.cache/shellcheck/bin" >> "$GITHUB_PATH"
+          fi
+
+      - name: Cache shellcheck binary (by day)
+        if: matrix.tool == 'shellcheck'
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/shellcheck
+          key: shellcheck-bin-${{ runner.os }}-${{ env.CACHE_DAY }}
+
+      - name: Run yamllint (workflows + core compose)
+        if: matrix.tool == 'yamllint'
+        run: |
+          set -euo pipefail
+          files=$(git ls-files \
+            '.github/workflows/*.yml' \
+            'ai_gateway/docker-compose.stack.yml' \
+            'ai_gateway/docker-compose.pins.yml' \
+            'ai_gateway/docker-compose.health.yml' \
+            'ai_gateway/config/*.yaml' \
+          ) || true
+          if [ -n "$files" ]; then
+            yamllint -s $files
+          else
+            echo "No YAML files to lint."
+          fi
+
+      - name: Run shellcheck (ai_gateway scripts)
+        if: matrix.tool == 'shellcheck'
+        run: |
+          set -euo pipefail
+          files=$(git ls-files 'ai_gateway/**/*.sh') || true
+          if [ -n "$files" ]; then
+            shellcheck -x $files
+          else
+            echo "No ai_gateway shell scripts to lint."
+          fi
+
+      - name: Run shellcheck (tracked .sh)
+        if: matrix.tool == 'shellcheck'
+        run: |
+          set -euo pipefail
+          files=$(git ls-files '**/*.sh' | grep -Ev '^(_archive/|_logs/|vendor/|_labs/|scripts/)') || true
+          if [ -n "$files" ]; then
+            shellcheck -x $files
+          else
+            echo "No shell scripts to lint."
+          fi

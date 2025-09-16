@@ -1,0 +1,29 @@
+S1 baseline health
+11434: open
+4000 : open
+6333 : open
+3000 : closed
+S1/ollama_tags               PASS
+S1/litellm_models            PASS
+S1/qdrant_readyz             PASS
+S1/openwebui_health          FAIL
+S2 router chat and error-path
+S2/chat_ok                   FAIL
+S2/chat_err_expected         FAIL
+S3 container DNS from litellm
+S3/litellm->ollama           FAIL
+S3/litellm->qdrant           FAIL
+S4 volumes and persistence
+S4/ollama_mount              FAIL
+S5 qdrant CRUD
+S5/create                    PASS
+S5/search                    FAIL
+S6 image digests
+S6/pins_file                 FOUND
+S7 ufw read-only
+S7/ufw_present               YES
+S8 docker root dir
+S9 perf micro smoke
+S9/latency                   52 ms
+S10 gpu host
+S10/gpu                      FOUND

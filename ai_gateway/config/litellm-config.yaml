@@ -1,0 +1,20 @@
+model_list:
+  - model_name: fast
+    litellm_params:
+      model: "ollama/qwen2.5-coder:14b"
+      api_base: "http://ollama:11434"
+      api_key: "sk-local"
+  - model_name: light
+    litellm_params:
+      model: "ollama/qwen2.5-coder:14b"
+      api_base: "http://ollama:11434"
+      api_key: "sk-local"
+  - model_name: heavy
+    litellm_params:
+      model: "ollama/qwen2.5-coder:14b"
+      api_base: "http://ollama:11434"
+      api_key: "sk-local"
+litellm_settings:
+  drop_params: true
+  set_verbose: false
+  num_retries: 0

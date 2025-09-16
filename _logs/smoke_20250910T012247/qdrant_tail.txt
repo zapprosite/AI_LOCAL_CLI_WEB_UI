@@ -1,0 +1,23 @@
+qdrant-1  |            _                 _    
+qdrant-1  |   __ _  __| |_ __ __ _ _ __ | |_  
+qdrant-1  |  / _` |/ _` | '__/ _` | '_ \| __| 
+qdrant-1  | | (_| | (_| | | | (_| | | | | |_  
+qdrant-1  |  \__, |\__,_|_|  \__,_|_| |_|\__| 
+qdrant-1  |     |_|                           
+qdrant-1  | 
+qdrant-1  | Version: 1.15.4, build: 20db14f8
+qdrant-1  | Access web UI at http://localhost:6333/dashboard
+qdrant-1  | 
+qdrant-1  | 2025-09-10T04:21:53.727614Z  INFO storage::content_manager::consensus::persistent: Loading raft state from ./storage/raft_state.json    
+qdrant-1  | 2025-09-10T04:21:53.729809Z  INFO storage::content_manager::toc: Loading collection: codekb    
+qdrant-1  | 2025-09-10T04:21:53.753863Z  INFO collection::shards::local_shard: Recovering shard ./storage/collections/codekb/0: 0/0 (0%)    
+qdrant-1  | 2025-09-10T04:21:53.753875Z  INFO collection::shards::local_shard: Recovered collection codekb: 0/0 (100%)    
+qdrant-1  | 2025-09-10T04:21:53.754019Z  INFO qdrant: Distributed mode disabled    
+qdrant-1  | 2025-09-10T04:21:53.754031Z  INFO qdrant: Telemetry reporting enabled, id: 1be266e0-35c7-47cb-9e89-37487070dabb    
+qdrant-1  | 2025-09-10T04:21:53.761158Z  INFO qdrant::actix: TLS disabled for REST API    
+qdrant-1  | 2025-09-10T04:21:53.761186Z  INFO qdrant::actix: Qdrant HTTP listening on 6333    
+qdrant-1  | 2025-09-10T04:21:53.761189Z  INFO actix_server::builder: starting 23 workers
+qdrant-1  | 2025-09-10T04:21:53.761191Z  INFO actix_server::server: Actix runtime found; starting in Actix runtime
+qdrant-1  | 2025-09-10T04:21:53.761193Z  INFO actix_server::server: starting service: "actix-web-service-0.0.0.0:6333", workers: 23, listening on: 0.0.0.0:6333
+qdrant-1  | 2025-09-10T04:21:53.762223Z  INFO qdrant::tonic: Qdrant gRPC listening on 6334    
+qdrant-1  | 2025-09-10T04:21:53.762229Z  INFO qdrant::tonic: TLS disabled for gRPC API    

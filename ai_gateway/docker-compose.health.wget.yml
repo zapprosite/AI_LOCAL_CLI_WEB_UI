@@ -1,0 +1,18 @@
+services:
+  litellm:
+    healthcheck:
+      test: ["CMD-SHELL", "sh -lc 'wget -qO- --header=\"Authorization: Bearer $LITELLM_MASTER_KEY\" http://127.0.0.1:4000/v1/models >/dev/null 2>&1 || exit 1'"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 5s
+  litellm_fb:
+    healthcheck:
+      test: ["CMD-SHELL", "sh -lc 'wget -qO- --header=\"Authorization: Bearer $LITELLM_MASTER_KEY\" http://127.0.0.1:4000/v1/models >/dev/null 2>&1 || exit 1'"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 8s
+networks:
+  ai_stack_net:
+    external: true

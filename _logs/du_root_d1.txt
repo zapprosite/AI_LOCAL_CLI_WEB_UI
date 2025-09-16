@@ -1,0 +1,17 @@
+0	/data/stack/observability
+4.0K	/data/stack/modelfiles
+4.0K	/data/stack/secrets
+8.0K	/data/stack/_realign
+8.0K	/data/stack/pr_artifacts
+16K	/data/stack/apps
+16K	/data/stack/langgraph_agent
+36K	/data/stack/.github
+40K	/data/stack/docs
+140K	/data/stack/ai_gateway
+220K	/data/stack/scripts
+13M	/data/stack/_logs
+83M	/data/stack/.git
+347M	/data/stack/_worktrees
+548M	/data/stack/_old
+2.5G	/data/stack/_archive
+3.5G	/data/stack

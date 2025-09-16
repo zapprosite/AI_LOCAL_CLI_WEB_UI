@@ -1,0 +1,133 @@
+/data/stack
+├── .git
+│   ├── COMMIT_EDITMSG
+│   ├── FETCH_HEAD
+│   ├── HEAD
+│   ├── ORIG_HEAD
+│   ├── branches
+│   ├── config
+│   ├── description
+│   ├── hooks
+│   ├── index
+│   ├── info
+│   ├── logs
+│   ├── objects
+│   └── refs
+├── .gitattributes
+├── .github
+│   └── pull_request_template.md
+├── .gitignore
+├── .keep_data_dirs.txt
+├── .keep_llm_dirs.txt
+├── AGENTS.md
+├── KEEP_ROOT.list
+├── _archive
+│   ├── 20250910T055709
+│   └── 20250910T080803
+├── _logs
+│   ├── clean_by_keep_dry.txt
+│   ├── compose_litellm_block.yaml
+│   ├── compose_resolved.yaml
+│   ├── last_smoke_after_minify.txt
+│   ├── last_wait_after_minify.txt
+│   ├── litellm_config_head.txt
+│   ├── litellm_env_redacted.txt
+│   ├── litellm_last200.txt
+│   ├── litellm_state.txt
+│   └── tree_L2_after_plan.txt
+├── _old
+│   └── 20250910T032132
+├── _realign
+│   └── plan_20250910T032132.txt
+├── ai_gateway
+│   ├── .env
+│   ├── .env.example
+│   ├── KEEP_AIGW.list
+│   ├── SMOKE_NOW.sh
+│   ├── WAIT_HEALTH.sh
+│   ├── _old
+│   ├── ai_gateway_backup_20250910T062020
+│   ├── config
+│   ├── docker-compose.health.yml
+│   ├── docker-compose.pins.yml
+│   ├── docker-compose.stack.yml
+│   └── tests
+├── apps
+│   └── starter-nextjs
+├── codex
+│   └── presets
+├── codex_prompts
+│   └── stack_codex_prompt_v1.md
+├── compose.yaml
+├── docs
+│   ├── AGENT_CONTRACT.json
+│   ├── KEEP_DOCS.list
+│   ├── NVME_MAP.md
+│   ├── PRD_FINAL.md
+│   ├── PR_ollama_integration.md
+│   ├── README.md
+│   └── TODO_DEPLOY.md
+├── modelfiles
+│   └── qwen2.5-coder-14b.modelfile
+├── observability
+│   ├── docker-compose.yml
+│   ├── grafana
+│   ├── loki
+│   ├── prometheus
+│   └── promtail
+├── pr_artifacts
+│   ├── 20250909T043745Z
+│   ├── 20250909T044115Z
+│   ├── compose_ps_20250909T105418Z.txt
+│   └── langgraph_js_v1_20250909T112844Z.tgz
+├── scripts
+│   ├── ai_syscheck.sh
+│   ├── bootstrap_env_git.sh
+│   ├── env_apply_restart.sh
+│   ├── env_check.sh
+│   ├── git_hooks_install.sh
+│   ├── health_suite_v1.sh
+│   ├── litellm_assert_config.sh
+│   ├── litellm_bootstrap_debug.sh
+│   ├── litellm_chat_warmup.sh
+│   ├── litellm_diag_now.sh
+│   ├── litellm_diag_run.sh
+│   ├── litellm_diag_v1.sh
+│   ├── litellm_diag_v2.sh
+│   ├── litellm_fix_and_diag.sh
+│   ├── litellm_min_boot.sh
+│   ├── litellm_probe_variants.sh
+│   ├── litellm_ready.sh
+│   ├── litellm_recreate_and_diag.sh
+│   ├── litellm_repair_v1.sh
+│   ├── litellm_repair_v2.sh
+│   ├── litellm_reset_diag.sh
+│   ├── litellm_up_and_test_chat.sh
+│   ├── litellm_up_check.sh
+│   ├── litellm_up_only.sh
+│   ├── litellm_uvicorn_boot.sh
+│   ├── net_alias_fix.sh
+│   ├── net_alias_fix2.sh
+│   ├── net_alias_fix3.sh
+│   ├── net_join.sh
+│   ├── node_env_setup.sh
+│   ├── nvme_audit.sh
+│   ├── nvme_doc_generate.sh
+│   ├── nvme_fstab_suggest.sh
+│   ├── nvme_rules_apply.sh
+│   ├── nvme_rules_apply_v2.sh
+│   ├── nvme_rules_apply_v3.sh
+│   ├── nvme_rules_apply_v4.sh
+│   ├── nvme_verify.sh
+│   ├── repo_bootstrap_git.sh
+│   ├── sec_scrub_leak.sh
+│   ├── stack_dns_probe.sh
+│   ├── stack_down.sh
+│   ├── stack_health.sh
+│   ├── stack_smoke_v1.sh
+│   └── stack_up.sh
+├── stack_clean_by_keep.sh
+├── stack_minify_v1.sh
+└── stack_realign.sh
+
+37 directories, 94 files

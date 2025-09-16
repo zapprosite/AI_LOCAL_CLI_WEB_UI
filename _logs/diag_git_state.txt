@@ -1,0 +1,50 @@
+== DIAG 2025-09-11T04:50:24Z ==
+/data/stack
+-- BRANCH/HEAD --
+main
+d7044f55de5615541b66c5783636eb6c5241543e
+d7044f5 docs: add CHANGELOG 1.0.0 and release process in CONTRIBUTING
+-- REMOTES --
+origin	https://github.com/zapprosite/AI_LOCAL_CLI_WEB_UI.git (fetch)
+origin	https://github.com/zapprosite/AI_LOCAL_CLI_WEB_UI.git (push)
+-- DIRTY/CONFLICTS --
+A? _old/20250910T032132/_labs/js_v1_sbx
+Am _old/20250910T032132/_labs/langgraph_js_template
+Am _old/20250910T032132/_labs/stack_v1/agents/js
+A  _old/20250910T032132/_labs/stack_v1/services/python
+A  _old/20250910T032132/_labs/upstream/fastapi-langgraph-agent-production-ready-template
+A  _old/20250910T032132/_labs/upstream/langgraphjs-starter-template
+A  _old/20250910T032132/_labs/upstream/qdrant-examples
+A  _old/20250910T032132/compose.yaml
+A  _old/20250910T032132/stack_align_v2.sh
+A  _old/20250910T032132/stack_realign.sh
+A  _realign/plan_20250910T032132.txt
+?? scripts/DIAG_GIT_STATE.sh
+-- IN-PROGRESS FLAGS --
+-- REFLOG (10) --
+d7044f5 HEAD@{2025-09-11 01:36:34 -0300}: reset: moving to v1.0.0
+d749b62 HEAD@{2025-09-11 01:36:34 -0300}: checkout: moving from rescue/20250911T043634Z to main
+d749b62 HEAD@{2025-09-11 01:36:34 -0300}: checkout: moving from main to rescue/20250911T043634Z
+d749b62 HEAD@{2025-09-10 23:05:36 -0300}: merge fix/litellm-bringup: Fast-forward
+62b7ed9 HEAD@{2025-09-10 23:05:36 -0300}: checkout: moving from fix/litellm-bringup to main
+d749b62 HEAD@{2025-09-10 22:44:39 -0300}: commit: docs(readme): include health overlays and .env policy
+d7044f5 HEAD@{2025-09-10 22:44:03 -0300}: checkout: moving from chore/repo-prune-v1 to fix/litellm-bringup
+d7044f5 HEAD@{2025-09-10 21:35:16 -0300}: commit: docs: add CHANGELOG 1.0.0 and release process in CONTRIBUTING
+3c3bfac HEAD@{2025-09-10 21:34:25 -0300}: commit: chore: add CODEOWNERS for critical paths; docs: require maintainer approval for ai_gateway/docs/workflows
+b6f58dd HEAD@{2025-09-10 21:33:47 -0300}: commit: scripts: add ROLLBACK_GREEN helper; docs: reference in branch policy and README troubleshooting
+-- TODAY COMMITS (origin/main) --
+-- BRANCHES rescue/revert --
+rescue/20250910T063553
+rescue/20250910T084702
+rescue/20250910T094020
+rescue/20250911T043634Z
+-- EMBEDDED repos under _old --
+EMBED: _old/20250910T032132/_labs/js_v1_sbx
+EMBED: _old/20250910T032132/_labs/langgraph_js_template
+EMBED: _old/20250910T032132/_labs/upstream/langgraphjs-starter-template
+EMBED: _old/20250910T032132/_labs/upstream/fastapi-langgraph-agent-production-ready-template
+EMBED: _old/20250910T032132/_labs/upstream/qdrant-examples
+EMBED: _old/20250910T032132/_labs/stack_v1/agents/js
+EMBED: _old/20250910T032132/_labs/stack_v1/services/python
+-- .gitignore _old/ --
+IGNORE_MISSING

@@ -1,0 +1,8 @@
+== POST /v1/chat/completions (code.hybrid, high_stakes=true, primary forced to fail) ==
+HTTP 200
+
+-- Raw JSON --
+{"id":"chatcmpl-678705aa-a5fe-4344-8556-362edbbc5c1b","created":1757634524,"model":"ollama/qwen2.5-coder:14b","object":"chat.completion","choices":[{"finish_reason":"stop","index":0,"message":{"content":"Hello! How can I assist you today?","role":"assistant"}}],"usage":{"completion_tokens":10,"prompt_tokens":36,"total_tokens":46}}
+-- Parsed --
+model: ollama/qwen2.5-coder:14b
+content: Hello! How can I assist you today?

@@ -1,0 +1,15 @@
+{
+  "name": "js-v1-sbx",
+  "private": true,
+  "type": "module",
+  "version": "0.1.0",
+  "packageManager": "pnpm@10",
+  "volta": { "node": "22.0.0", "pnpm": "10.0.0" },
+  "scripts": {
+    "dev:code": "node src/code.mjs",
+    "dev:docs": "node src/docs.mjs"
+  },
+  "dependencies": {
+    "@langchain/openai": "^0.4.0"
+  }
+}

@@ -1,0 +1,177 @@
+# REALIGN PLAN 20250910T032132 (apply)
+# root=/data/stack dest_old=/data/stack/_old/20250910T032132
+KEEP ./.gitattributes
+KEEP ./.github
+KEEP ./.gitignore
+KEEP ./.keep_data_dirs.txt
+KEEP ./.keep_llm_dirs.txt
+KEEP ./AGENTS.md
+MOVE ./_labs -> /data/stack/_old/20250910T032132/
+KEEP ./_logs
+KEEP ./ai_gateway
+MOVE ./apps -> /data/stack/_old/20250910T032132/
+MOVE ./cli -> /data/stack/_old/20250910T032132/
+MOVE ./codekb_src -> /data/stack/_old/20250910T032132/
+MOVE ./codex -> /data/stack/_old/20250910T032132/
+MOVE ./codex_prompts -> /data/stack/_old/20250910T032132/
+MOVE ./compose.yaml -> /data/stack/_old/20250910T032132/
+KEEP ./docs
+MOVE ./dumps -> /data/stack/_old/20250910T032132/
+MOVE ./langgraph_agent -> /data/stack/_old/20250910T032132/
+MOVE ./modelfiles -> /data/stack/_old/20250910T032132/
+MOVE ./observability -> /data/stack/_old/20250910T032132/
+MOVE ./pr_artifacts -> /data/stack/_old/20250910T032132/
+TOLERATE ./pulumi_ai_gateway
+MOVE ./qdrant -> /data/stack/_old/20250910T032132/
+MOVE ./scripts -> /data/stack/_old/20250910T032132/
+MOVE ./stack_align_v2.sh -> /data/stack/_old/20250910T032132/
+MOVE ./stack_realign.sh -> /data/stack/_old/20250910T032132/
+OK ai_gateway/UP.sh
+OK ai_gateway/STATUS.sh
+OK ai_gateway/CHECK_PORTS.sh
+OK ai_gateway/WAIT_HEALTH.sh
+OK ai_gateway/SMOKE_NOW.sh
+OK ai_gateway/CHAT_MATRIX.sh
+OK ai_gateway/GEN_PINS.sh
+OK ai_gateway/UFW_STACK_LAN_ONLY.sh
+TREE_AFTER:
+.
+├── .git
+│   ├── COMMIT_EDITMSG
+│   ├── HEAD
+│   ├── branches
+│   ├── config
+│   ├── description
+│   ├── hooks
+│   ├── index
+│   ├── info
+│   ├── logs
+│   ├── objects
+│   └── refs
+├── .gitattributes
+├── .github
+│   └── pull_request_template.md
+├── .gitignore
+├── .keep_data_dirs.txt
+├── .keep_llm_dirs.txt
+├── AGENTS.md
+├── _logs
+│   ├── capture_20250910T024405
+│   ├── capture_20250910T024405.tgz
+│   ├── chat_matrix_20250910T012905
+│   ├── chat_matrix_20250910T013304
+│   ├── chat_matrix_20250910T013645
+│   ├── chat_matrix_20250910T014229
+│   ├── chat_matrix_20250910T022841
+│   ├── health_20250910T004617
+│   ├── health_20250910T004621
+│   ├── last_chat_matrix.txt
+│   ├── last_smoke.txt
+│   ├── out_$(date +%Y%m%dT%H%M%S)
+│   ├── scenarios_20250909T150048Z
+│   ├── scenarios_20250909T150438Z
+│   ├── scenarios_20250909T150836Z
+│   ├── scenarios_20250909T151727Z
+│   ├── scenarios_20250909T151916Z
+│   ├── scenarios_20250909T152320Z
+│   ├── scenarios_20250909T174527Z
+│   ├── smoke_20250910T011529
+│   ├── smoke_20250910T011755
+│   ├── smoke_20250910T012247
+│   ├── smoke_20250910T012544
+│   ├── smoke_20250910T013314
+│   ├── smoke_20250910T013605
+│   ├── smoke_20250910T013708
+│   ├── smoke_20250910T013942
+│   ├── smoke_20250910T014229
+│   ├── smoke_20250910T015127
+│   ├── smoke_20250910T015448
+│   ├── smoke_20250910T015737
+│   ├── smoke_20250910T015829
+│   ├── smoke_20250910T020712
+│   ├── smoke_20250910T022832
+│   ├── smoke_20250910T023130
+│   ├── smoke_20250910T023448
+│   ├── smoke_20250910T024150
+│   ├── stack_health_20250909T133644Z
+│   ├── stack_health_20250909T133859Z
+│   ├── stack_health_20250909T134128Z
+│   ├── stack_health_20250909T140604Z
+│   ├── stack_health_20250909T140856Z
+│   ├── stack_health_20250909T141034Z
+│   ├── stack_health_20250909T141201Z
+│   ├── stack_health_20250909T141456Z
+│   ├── stack_health_20250909T141705Z
+│   ├── stack_health_20250909T141952Z
+│   ├── stack_health_20250909T142305Z
+│   ├── stack_health_20250909T142535Z
+│   ├── stack_health_20250909T151726Z
+│   ├── stack_health_20250909T151915Z
+│   ├── stack_health_20250909T152320Z
+│   ├── stack_smoke_20250909T133644Z
+│   ├── stack_smoke_20250909T133859Z
+│   ├── stack_smoke_20250909T134129Z
+│   ├── stack_smoke_20250909T140604Z
+│   ├── stack_smoke_20250909T140857Z
+│   ├── stack_smoke_20250909T141035Z
+│   ├── stack_smoke_20250909T141201Z
+│   ├── stack_smoke_20250909T141456Z
+│   ├── stack_smoke_20250909T141705Z
+│   ├── stack_smoke_20250909T141952Z
+│   ├── stack_smoke_20250909T142305Z
+│   ├── stack_smoke_20250909T142535Z
+│   ├── stack_smoke_20250909T151726Z
+│   ├── stack_smoke_20250909T151916Z
+│   └── stack_smoke_20250909T152320Z
+├── _old
+│   └── 20250910T032132
+├── _realign
+│   └── plan_20250910T032132.txt
+├── ai_gateway
+│   ├── .env
+│   ├── .env.example
+│   ├── .git
+│   ├── .github
+│   ├── .gitignore
+│   ├── .keep_ollama_models.txt
+│   ├── BACKUP_VOLUMES.sh
+│   ├── CHAT_MATRIX.sh
+│   ├── CHECK_PORTS.sh
+│   ├── GEN_PINS.sh
+│   ├── SMOKE_NOW.sh
+│   ├── STACK_CAPTURE.sh
+│   ├── STATUS.sh
+│   ├── UFW_STACK_LAN_ONLY.sh
+│   ├── UP.sh
+│   ├── WAIT_HEALTH.sh
+│   ├── _old
+│   ├── _out
+│   ├── cache
+│   ├── config
+│   ├── docker-compose.pins.yml
+│   ├── docker-compose.stack.yml
+│   ├── generate
+│   ├── litellm
+│   ├── litellm_config.yaml
+│   ├── litellm_diag_now.sh
+│   ├── logs
+│   ├── plan
+│   ├── requirements
+│   ├── scripts
+│   ├── stack_clean_apply.sh
+│   ├── stack_guard.sh
+│   ├── stack_health_report.sh
+│   ├── stack_smoke_v1.sh
+│   └── verify.
+├── docs
+│   ├── CHAT_FULL.md
+│   ├── NEW_CHAT_PROMPT.md
+│   ├── NVME_MAP.md
+│   ├── PRD_FINAL.md
+│   ├── PR_CHECKLIST.md
+│   ├── PR_ollama_integration.md
+│   ├── README.md
+│   └── failed_start.log
+└── pulumi_ai_gateway
+
+91 directories, 47 files

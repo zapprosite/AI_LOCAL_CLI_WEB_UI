@@ -1,0 +1,160 @@
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/proxy_server.py", line 4092, in chat_completion
+ai_gateway-litellm-fb-1  |     result = await base_llm_response_processor.base_process_llm_request(
+ai_gateway-litellm-fb-1  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ai_gateway-litellm-fb-1  |     ...<16 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  |     ^
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/common_request_processing.py", line 425, in base_process_llm_request
+ai_gateway-litellm-fb-1  |     llm_call = await route_request(
+ai_gateway-litellm-fb-1  |                ^^^^^^^^^^^^^^^^^^^^
+ai_gateway-litellm-fb-1  |     ...<4 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  |     ^
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/route_llm_request.py", line 170, in route_request
+ai_gateway-litellm-fb-1  |     raise ProxyModelNotFoundError(
+ai_gateway-litellm-fb-1  |     ...<2 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  | litellm.proxy.route_llm_request.ProxyModelNotFoundError: 400: {'error': '/chat/completions: Invalid model name passed in model=light. Call `/v1/models` to view available models for your key.'}
+ai_gateway-litellm-fb-1  | INFO:     172.22.0.1:57242 - "POST /v1/chat/completions HTTP/1.1" 400 Bad Request
+ai_gateway-litellm-fb-1  | [92m13:33:12 - LiteLLM Proxy:ERROR[0m: common_request_processing.py:644 - litellm.proxy.proxy_server._handle_llm_api_exception(): Exception occured - 400: {'error': '/chat/completions: Invalid model name passed in model=heavy. Call `/v1/models` to view available models for your key.'}
+ai_gateway-litellm-fb-1  | Traceback (most recent call last):
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/proxy_server.py", line 4092, in chat_completion
+ai_gateway-litellm-fb-1  |     result = await base_llm_response_processor.base_process_llm_request(
+ai_gateway-litellm-fb-1  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ai_gateway-litellm-fb-1  |     ...<16 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  |     ^
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/common_request_processing.py", line 425, in base_process_llm_request
+ai_gateway-litellm-fb-1  |     llm_call = await route_request(
+ai_gateway-litellm-fb-1  |                ^^^^^^^^^^^^^^^^^^^^
+ai_gateway-litellm-fb-1  |     ...<4 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  |     ^
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/route_llm_request.py", line 170, in route_request
+ai_gateway-litellm-fb-1  |     raise ProxyModelNotFoundError(
+ai_gateway-litellm-fb-1  |     ...<2 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  | litellm.proxy.route_llm_request.ProxyModelNotFoundError: 400: {'error': '/chat/completions: Invalid model name passed in model=heavy. Call `/v1/models` to view available models for your key.'}
+ai_gateway-litellm-fb-1  | INFO:     172.22.0.1:57244 - "POST /v1/chat/completions HTTP/1.1" 400 Bad Request
+ai_gateway-litellm-fb-1  | [92m13:33:12 - LiteLLM Proxy:ERROR[0m: common_request_processing.py:644 - litellm.proxy.proxy_server._handle_llm_api_exception(): Exception occured - 400: {'error': '/chat/completions: Invalid model name passed in model=heavy. Call `/v1/models` to view available models for your key.'}
+ai_gateway-litellm-fb-1  | Traceback (most recent call last):
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/proxy_server.py", line 4092, in chat_completion
+ai_gateway-litellm-fb-1  |     result = await base_llm_response_processor.base_process_llm_request(
+ai_gateway-litellm-fb-1  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ai_gateway-litellm-fb-1  |     ...<16 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  |     ^
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/common_request_processing.py", line 425, in base_process_llm_request
+ai_gateway-litellm-fb-1  |     llm_call = await route_request(
+ai_gateway-litellm-fb-1  |                ^^^^^^^^^^^^^^^^^^^^
+ai_gateway-litellm-fb-1  |     ...<4 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  |     ^
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/route_llm_request.py", line 170, in route_request
+ai_gateway-litellm-fb-1  |     raise ProxyModelNotFoundError(
+ai_gateway-litellm-fb-1  |     ...<2 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  | litellm.proxy.route_llm_request.ProxyModelNotFoundError: 400: {'error': '/chat/completions: Invalid model name passed in model=heavy. Call `/v1/models` to view available models for your key.'}
+ai_gateway-litellm-fb-1  | INFO:     172.22.0.1:57246 - "POST /v1/chat/completions HTTP/1.1" 400 Bad Request
+ai_gateway-litellm-fb-1  | [92m13:33:13 - LiteLLM Proxy:ERROR[0m: common_request_processing.py:644 - litellm.proxy.proxy_server._handle_llm_api_exception(): Exception occured - 400: {'error': '/chat/completions: Invalid model name passed in model=heavy. Call `/v1/models` to view available models for your key.'}
+ai_gateway-litellm-fb-1  | Traceback (most recent call last):
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/proxy_server.py", line 4092, in chat_completion
+ai_gateway-litellm-fb-1  |     result = await base_llm_response_processor.base_process_llm_request(
+ai_gateway-litellm-fb-1  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ai_gateway-litellm-fb-1  |     ...<16 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  |     ^
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/common_request_processing.py", line 425, in base_process_llm_request
+ai_gateway-litellm-fb-1  |     llm_call = await route_request(
+ai_gateway-litellm-fb-1  |                ^^^^^^^^^^^^^^^^^^^^
+ai_gateway-litellm-fb-1  |     ...<4 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  |     ^
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/route_llm_request.py", line 170, in route_request
+ai_gateway-litellm-fb-1  |     raise ProxyModelNotFoundError(
+ai_gateway-litellm-fb-1  |     ...<2 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  | litellm.proxy.route_llm_request.ProxyModelNotFoundError: 400: {'error': '/chat/completions: Invalid model name passed in model=heavy. Call `/v1/models` to view available models for your key.'}
+ai_gateway-litellm-fb-1  | INFO:     172.22.0.1:57256 - "POST /v1/chat/completions HTTP/1.1" 400 Bad Request
+ai_gateway-litellm-fb-1  | [92m13:33:13 - LiteLLM Proxy:ERROR[0m: common_request_processing.py:644 - litellm.proxy.proxy_server._handle_llm_api_exception(): Exception occured - 400: {'error': '/chat/completions: Invalid model name passed in model=code.router. Call `/v1/models` to view available models for your key.'}
+ai_gateway-litellm-fb-1  | Traceback (most recent call last):
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/proxy_server.py", line 4092, in chat_completion
+ai_gateway-litellm-fb-1  |     result = await base_llm_response_processor.base_process_llm_request(
+ai_gateway-litellm-fb-1  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ai_gateway-litellm-fb-1  |     ...<16 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  |     ^
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/common_request_processing.py", line 425, in base_process_llm_request
+ai_gateway-litellm-fb-1  |     llm_call = await route_request(
+ai_gateway-litellm-fb-1  |                ^^^^^^^^^^^^^^^^^^^^
+ai_gateway-litellm-fb-1  |     ...<4 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  |     ^
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/route_llm_request.py", line 170, in route_request
+ai_gateway-litellm-fb-1  |     raise ProxyModelNotFoundError(
+ai_gateway-litellm-fb-1  |     ...<2 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  | litellm.proxy.route_llm_request.ProxyModelNotFoundError: 400: {'error': '/chat/completions: Invalid model name passed in model=code.router. Call `/v1/models` to view available models for your key.'}
+ai_gateway-litellm-fb-1  | INFO:     172.22.0.1:57258 - "POST /v1/chat/completions HTTP/1.1" 400 Bad Request
+ai_gateway-litellm-fb-1  | [92m13:33:13 - LiteLLM Proxy:ERROR[0m: common_request_processing.py:644 - litellm.proxy.proxy_server._handle_llm_api_exception(): Exception occured - 400: {'error': '/chat/completions: Invalid model name passed in model=code.router. Call `/v1/models` to view available models for your key.'}
+ai_gateway-litellm-fb-1  | Traceback (most recent call last):
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/proxy_server.py", line 4092, in chat_completion
+ai_gateway-litellm-fb-1  |     result = await base_llm_response_processor.base_process_llm_request(
+ai_gateway-litellm-fb-1  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ai_gateway-litellm-fb-1  |     ...<16 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  |     ^
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/common_request_processing.py", line 425, in base_process_llm_request
+ai_gateway-litellm-fb-1  |     llm_call = await route_request(
+ai_gateway-litellm-fb-1  |                ^^^^^^^^^^^^^^^^^^^^
+ai_gateway-litellm-fb-1  |     ...<4 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  |     ^
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/route_llm_request.py", line 170, in route_request
+ai_gateway-litellm-fb-1  |     raise ProxyModelNotFoundError(
+ai_gateway-litellm-fb-1  |     ...<2 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  | litellm.proxy.route_llm_request.ProxyModelNotFoundError: 400: {'error': '/chat/completions: Invalid model name passed in model=code.router. Call `/v1/models` to view available models for your key.'}
+ai_gateway-litellm-fb-1  | INFO:     172.22.0.1:57272 - "POST /v1/chat/completions HTTP/1.1" 400 Bad Request
+ai_gateway-litellm-fb-1  | [92m13:33:13 - LiteLLM Proxy:ERROR[0m: common_request_processing.py:644 - litellm.proxy.proxy_server._handle_llm_api_exception(): Exception occured - 400: {'error': '/chat/completions: Invalid model name passed in model=code.router. Call `/v1/models` to view available models for your key.'}
+ai_gateway-litellm-fb-1  | Traceback (most recent call last):
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/proxy_server.py", line 4092, in chat_completion
+ai_gateway-litellm-fb-1  |     result = await base_llm_response_processor.base_process_llm_request(
+ai_gateway-litellm-fb-1  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ai_gateway-litellm-fb-1  |     ...<16 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  |     ^
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/common_request_processing.py", line 425, in base_process_llm_request
+ai_gateway-litellm-fb-1  |     llm_call = await route_request(
+ai_gateway-litellm-fb-1  |                ^^^^^^^^^^^^^^^^^^^^
+ai_gateway-litellm-fb-1  |     ...<4 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  |     ^
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/route_llm_request.py", line 170, in route_request
+ai_gateway-litellm-fb-1  |     raise ProxyModelNotFoundError(
+ai_gateway-litellm-fb-1  |     ...<2 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  | litellm.proxy.route_llm_request.ProxyModelNotFoundError: 400: {'error': '/chat/completions: Invalid model name passed in model=code.router. Call `/v1/models` to view available models for your key.'}
+ai_gateway-litellm-fb-1  | INFO:     172.22.0.1:57286 - "POST /v1/chat/completions HTTP/1.1" 400 Bad Request
+ai_gateway-litellm-fb-1  | INFO:     172.22.0.1:50794 - "GET /v1/models HTTP/1.1" 200 OK
+ai_gateway-litellm-fb-1  | [92m13:34:47 - LiteLLM Proxy:ERROR[0m: common_request_processing.py:644 - litellm.proxy.proxy_server._handle_llm_api_exception(): Exception occured - 400: {'error': '/chat/completions: Invalid model name passed in model=code.router. Call `/v1/models` to view available models for your key.'}
+ai_gateway-litellm-fb-1  | Traceback (most recent call last):
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/proxy_server.py", line 4092, in chat_completion
+ai_gateway-litellm-fb-1  |     result = await base_llm_response_processor.base_process_llm_request(
+ai_gateway-litellm-fb-1  |              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ai_gateway-litellm-fb-1  |     ...<16 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  |     ^
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/common_request_processing.py", line 425, in base_process_llm_request
+ai_gateway-litellm-fb-1  |     llm_call = await route_request(
+ai_gateway-litellm-fb-1  |                ^^^^^^^^^^^^^^^^^^^^
+ai_gateway-litellm-fb-1  |     ...<4 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  |     ^
+ai_gateway-litellm-fb-1  |   File "/usr/lib/python3.13/site-packages/litellm/proxy/route_llm_request.py", line 170, in route_request
+ai_gateway-litellm-fb-1  |     raise ProxyModelNotFoundError(
+ai_gateway-litellm-fb-1  |     ...<2 lines>...
+ai_gateway-litellm-fb-1  |     )
+ai_gateway-litellm-fb-1  | litellm.proxy.route_llm_request.ProxyModelNotFoundError: 400: {'error': '/chat/completions: Invalid model name passed in model=code.router. Call `/v1/models` to view available models for your key.'}
+ai_gateway-litellm-fb-1  | INFO:     172.22.0.1:50802 - "POST /v1/chat/completions HTTP/1.1" 400 Bad Request
+ai_gateway-litellm-fb-1  | INFO:     172.22.0.1:50806 - "GET /v1/models HTTP/1.1" 200 OK

@@ -1,0 +1,6 @@
+services:
+  litellm_fb:
+    image: ghcr.io/berriai/litellm-non_root:main-stable
+networks:
+  ai_stack_net:
+    external: true

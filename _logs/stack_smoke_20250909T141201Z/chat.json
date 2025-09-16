@@ -1,0 +1,1 @@
+{"id":"chatcmpl-a206803d-c213-4b41-98b1-671cd8ef5bae","created":1757427122,"model":"ollama/qwen2.5-coder:14b","object":"chat.completion","choices":[{"finish_reason":"stop","index":0,"message":{"content":"4","role":"assistant"}}],"usage":{"completion_tokens":2,"prompt_tokens":42,"total_tokens":44}}

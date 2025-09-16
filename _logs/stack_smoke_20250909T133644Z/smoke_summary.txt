@@ -1,0 +1,6 @@
+models                   PASS
+chat_code_router         FAIL
+ollama_tags              PASS
+qdrant_readyz            PASS
+qdrant_collections       PASS
+openwebui_root           FAIL

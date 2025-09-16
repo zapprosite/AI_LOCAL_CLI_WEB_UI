@@ -1,0 +1,3 @@
+openwebui-1  | Loading WEBUI_SECRET_KEY from file, not provided as an environment variable.
+openwebui-1  | Generating WEBUI_SECRET_KEY
+openwebui-1  | Loading WEBUI_SECRET_KEY from .webui_secret_key
