@@ -1,3 +1,39 @@
+# LOGGING_POLICY
+
+> **Status**: synchronized  
+> **Host**: zappro  
+> **Last Audited**: 2025-09-16T05:44:26-03:00  
+> **Stack Summary**:  
+> ```
+> (audit fail)
+> ```
+
+## Overview
+Short purpose of this document in the AI local stack (GPU + LiteLLM Router + Ollama + OpenWebUI + Qdrant). Keep it concise and actionable.
+
+## Architecture Context
+- Router (ports 4000/4001), hybrids: code/docs/search → fallback openai/gpt-5  
+- Local models via Ollama (qwen2.5-coder:14b etc.)
+- OpenWebUI as OpenAI-compatible client  
+- Vector store: Qdrant
+
+## Operations (Terminal-only)
+- Health: `ai_gateway/WAIT_HEALTH.sh`  
+- Smoke: `ai_gateway/SMOKE_NOW.sh`  
+- Final audit: `ai_gateway/FINAL_AUDIT.sh`
+
+## How to Use
+Step-by-step relevant to this document. Example requests, env vars, compose overlays.
+
+## Troubleshooting
+Common pitfalls + quick commands.
+
+## Legacy Notes
+(Original content preserved below)
+
+----
+## Legacy Notes (raw)
+
 Logging Policy
 
 - Location: `_logs/`

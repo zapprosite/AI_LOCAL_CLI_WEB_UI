@@ -1,35 +1,54 @@
-# === ENV / Segredos ===
-ai_gateway/.env
-**/.env
-!**/.env.example
-*.secret
-*.key
-*.pem
+# === Core ===
+/.git/
+/.gitmodules
+/.gitattributes
+/.yamllint.yml
 
-# Host data volumes (do not version)
-/data/
-
-# === Artefatos e logs ===
-/_logs/
+# === Large/Generated ===
 /_archive/
-/_out/
-/**/_out/
-**/*.log
-**/tmp/
-**/.cache/
+/_trash/
+/_logs/
+/backups/
+/pr_artifacts/
+/_worktrees/
+/_old/
+/_realign/
+/observability/
+/pr_artifacts/*
+/data/*
+/*.tgz
+*.tgz
+*.tar
+*.zip
 
-# === Python ===
-**/__pycache__/
-**/.pytest_cache/
-**/.mypy_cache/
-**/*.pyc
+# === App Data (not source) ===
+/ai_gateway/logs/
+/ai_gateway/requests/
+/ai_gateway/tests/tmp/
+/ai_gateway/*.db
+/openwebui/
+/qdrant/
+/ollama/
+/llm/
 
-# === Docker/Build ===
-**/.docker/
-**/docker-data/
-**/.DS_Store
+# === Secrets ===
+/secrets/*
+!.keep_*
 
-# === Node/NPM ===
-**/node_modules/
-**/dist/
-**/build/
+# === Node / Python / misc ===
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.log.*
+*.sqlite
+*.sqlite3
+*.db
+.DS_Store
+
+# === Build caches ===
+dist/
+build/
+.cache/
