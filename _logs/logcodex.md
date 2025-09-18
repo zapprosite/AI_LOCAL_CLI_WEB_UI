@@ -288,3 +288,8 @@ Thu Sep 18 14:59:23 2025
 |    0   N/A  N/A          877020      G   /usr/bin/konsole                          7MiB |
 |    0   N/A  N/A         1005674      G   /usr/bin/krunner                         18MiB |
 +-----------------------------------------------------------------------------------------+
+
+
+## Screenshot: OpenWebUI Auth
+
+Path: _logs/openwebui_auth.png
