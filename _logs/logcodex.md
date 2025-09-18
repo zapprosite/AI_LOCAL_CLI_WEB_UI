@@ -293,3 +293,9 @@ Thu Sep 18 14:59:23 2025
 ## Screenshot: OpenWebUI Auth
 
 Path: _logs/openwebui_auth.png
+
+
+## Screenshots
+
+- OpenWebUI Auth: _logs/openwebui_auth.png
+- OpenWebUI Models (hybrids): _logs/openwebui_models_hybrid.png
