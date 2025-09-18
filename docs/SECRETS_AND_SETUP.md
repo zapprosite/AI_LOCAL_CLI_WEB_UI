@@ -1,4 +1,4 @@
-# Segredos e Setup (v2)
+# Segredos e Setup
 
 Arquivos
 - Catálogo (sem valores): `docs/SECRETS_RUNBOOK.md`

@@ -1,4 +1,4 @@
-# Visão Geral (v2)
+# Visão Geral
 
 Objetivo
 - Operar e evoluir a stack de IA local da Refrimix, oferecendo ao ZapPro Assistente (construção civil) modelos híbridos e ferramentas para apoiar orçamentos, laudos, memorial descritivo, compras, cronograma e inspeções de obra.

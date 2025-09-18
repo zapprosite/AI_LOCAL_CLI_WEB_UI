@@ -1,4 +1,4 @@
-# Operações, Health e Logs (v2)
+# Operações, Health e Logs
 
 Checkups
 - Script principal: `scripts/CHECKUP_ALL.sh`

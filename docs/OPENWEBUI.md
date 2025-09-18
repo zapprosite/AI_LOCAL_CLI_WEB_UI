@@ -1,4 +1,4 @@
-# OpenWebUI (v2)
+# OpenWebUI
 
 Objetivo
 - UI para conversa, testes rápidos e fluxos de trabalho (com compatibilidade OpenAI e conexões diretas).

@@ -1,4 +1,4 @@
-# Integração MCP — v2 (Model Context Protocol)
+# Integração MCP (Model Context Protocol)
 
 O que é
 - Padrão para conectar o assistente a ferramentas via “servidores MCP”.

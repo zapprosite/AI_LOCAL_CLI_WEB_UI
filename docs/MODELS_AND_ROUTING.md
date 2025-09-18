@@ -1,4 +1,4 @@
-# Modelos e Roteamento (v2)
+# Modelos e Roteamento
 
 Camadas
 - `:4000` (LiteLLM principal): aliases locais (fast/light/heavy) → Ollama.

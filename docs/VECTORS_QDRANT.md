@@ -1,4 +1,4 @@
-# Vetores e Qdrant (v2)
+# Vetores e Qdrant
 
 Objetivo
 - Indexar conhecimento de obra (normas, memorial, escopo, contratos, notas técnicas) para respostas contextuais.
