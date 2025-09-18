@@ -25,6 +25,19 @@ Notas Refrimix (inteligência de uso)
 - Para compras, integre planilhas e catálogos (importação de CSV/Excel) e gere comparativos.
 - Para segurança do trabalho e qualidade, crie prompts com restrições normativas e checklists de inspeção.
 
+Links rápidos
+- Segredos & Setup: `docs/SECRETS_AND_SETUP.md`
+- OpenWebUI: `docs/OPENWEBUI.md`
+- Modelos & Roteamento: `docs/MODELS_AND_ROUTING.md`
+- Vetores (Qdrant): `docs/VECTORS_QDRANT.md`
+- Operações & Logs: `docs/OPERATIONS.md`
+- Workflows ZapPro: `docs/ZAPPRO_WORKFLOWS.md`
+- MCP Tools: `docs/MCP_TOOLS.md`
+- Prompts (Multi‑Agents): `docs/PROMPTS_ZAPPRO.md`
+- Cheatsheet (1‑página): `docs/CHEATSHEET_ZAPPRO.md`
+- Tutorial .env (chaves): `docs/tutorialenv.md`
+- PRDs: `docs/specs/PRD_MAP_TEST_DEBUG.md`, `docs/specs/PRD_HYBRID_AND_CLEAN.md`
+
 Próximos passos
 - Ajustar timeouts/retries conforme latência da máquina e dos modelos.
 - Adicionar CI E2E (Playwright) com screenshots de modelos híbridos por PR.
