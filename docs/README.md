@@ -1,57 +1,44 @@
-# README
+# Visão Geral
 
-> **Status**: synchronized  
-> **Host**: zappro
-> **Last Audited**: 2025-09-16T06:04:13-03:00
-> **Stack Summary**:  
-> ```
-> SUMMARY :4000=200 :4001=200 MODELS4000=[fast,light,heavy] MODELS4001=[code.hybrid,docs.hybrid,search.hybrid,code.remote,docs.remote,search.remote,code.router,docs.router,search.router,openai.gpt5] fast=200 code.router=200 code.hybrid.local=200 code.hybrid.fb=200 openwebui="ai_gateway-openwebui-1	0.0.0.0:3000->8080/tcp, [::]:3000->8080/tcp" qdrant=200
-> ```
-> (audit fail)
-> (audit fail)
-> (audit fail)
+Objetivo
+- Operar e evoluir a stack de IA local da Refrimix, oferecendo ao ZapPro Assistente (construção civil) modelos híbridos e ferramentas para apoiar orçamentos, laudos, memorial descritivo, compras, cronograma e inspeções de obra.
 
-## Overview
-Short purpose of this document in the AI local stack (GPU + LiteLLM Router + Ollama + OpenWebUI + Qdrant). Keep it concise and actionable.
+O que temos
+- Orquestração Docker (serviços: Ollama, LiteLLM `:4000`, Router Fallback `:4001`, OpenWebUI, Qdrant).
+- Modelos híbridos expostos no `:4001` (code/docs/search.hybrid) e aliases locais no `:4000` (fast/light/heavy).
+- UI OpenWebUI compatível com API OpenAI + conexões diretas.
+- Armazenamento vetorial Qdrant (coleções seeds `agents_kb` e `docs_kb`).
+- Governança de segredos (assistente idempotente + overlay env_file).
+- Checkups automatizados (WAIT/SMOKE/AUDIT, DATA_STANDARDIZE, listas de modelos, seeds) com logcodex consolidado.
+- Integração MCP para automações (filesystem, ripgrep, memory, playwright).
 
-## Architecture Context
-- Router (ports 4000/4001), hybrids: code/docs/search → fallback openai/gpt-5  
-- Local models via Ollama (qwen2.5-coder:14b etc.)
-- OpenWebUI as OpenAI-compatible client  
-- Vector store: Qdrant
+Como usar
+1) Preencha segredos: rode o atalho Desktop “Preencher Segredos (Stack)” ou `scripts/SETUP_ENV_SAFE.sh`.
+2) Suba a stack (sempre com overlay `docker-compose.env.yml`).
+3) Garanta saúde e evidências: `scripts/CHECKUP_ALL.sh` (gera `logcodex.md`, rota e arquiva logs; copia para Desktop).
+4) Use a UI (OpenWebUI porta 3000) com provedor roteado para `:4001/v1`.
+5) Para fluxos de obra, siga `ZAPPRO_WORKFLOWS.md`.
 
-## Operations (Terminal-only)
-- Health: `ai_gateway/WAIT_HEALTH.sh`  
-- Smoke: `ai_gateway/SMOKE_NOW.sh`  
-- Final audit: `ai_gateway/FINAL_AUDIT.sh`
+Notas Refrimix (inteligência de uso)
+- Em obras, priorize respostas curtas e objetivas, com checklists e passos de ação.
+- Separe contexto por fontes: “normas técnicas”, “contratos”, “escopo”, “orçamentos”. Use Qdrant para recuperação.
+- Para compras, integre planilhas e catálogos (importação de CSV/Excel) e gere comparativos.
+- Para segurança do trabalho e qualidade, crie prompts com restrições normativas e checklists de inspeção.
 
-## How to Use
-Step-by-step relevant to this document. Example requests, env vars, compose overlays.
+Links rápidos
+- Segredos & Setup: `docs/SECRETS_AND_SETUP.md`
+- OpenWebUI: `docs/OPENWEBUI.md`
+- Modelos & Roteamento: `docs/MODELS_AND_ROUTING.md`
+- Vetores (Qdrant): `docs/VECTORS_QDRANT.md`
+- Operações & Logs: `docs/OPERATIONS.md`
+- Workflows ZapPro: `docs/ZAPPRO_WORKFLOWS.md`
+- MCP Tools: `docs/MCP_TOOLS.md`
+- Prompts (Multi‑Agents): `docs/PROMPTS_ZAPPRO.md`
+- Cheatsheet (1‑página): `docs/CHEATSHEET_ZAPPRO.md`
+- Tutorial .env (chaves): `docs/tutorialenv.md`
+- PRDs: `docs/specs/PRD_MAP_TEST_DEBUG.md`, `docs/specs/PRD_HYBRID_AND_CLEAN.md`
 
-## Troubleshooting
-Common pitfalls + quick commands.
-
-## Legacy Notes
-(Original content preserved below)
-
-----
-## Legacy Notes (raw)
-
-AI Gateway — Quickstart
-
-- Requisitos: Docker, Docker Compose, GPU NVIDIA opcional.
-- Rede: `ai_stack_net` (criada automaticamente pelo `UP.sh` se não existir).
-
-Passos:
-- `cd /data/stack/ai_gateway`
-- `cp .env.example .env` e ajuste portas/variáveis se necessário
-- `./UP.sh` para subir (faz verificação de portas e rede)
-- `./STATUS.sh` para checar endpoints:
-  - Ollama: `http://127.0.0.1:11434/api/tags`
-  - LiteLLM: `http://127.0.0.1:4000/v1/models` (200 ou 401 OK)
-  - Open WebUI: `http://127.0.0.1:3000/`
-- Para derrubar: `docker compose -f docker-compose.stack.yml down -v`
-
-Observações:
-- Compose único: `docker-compose.stack.yml` (arquivos antigos em `ai_gateway/_old/`).
-- Config do LiteLLM em `ai_gateway/config/litellm-config.yaml`.
+Próximos passos
+- Ajustar timeouts/retries conforme latência da máquina e dos modelos.
+- Adicionar CI E2E (Playwright) com screenshots de modelos híbridos por PR.
+- Conectar dados reais (docs técnicos e contratos) ao Qdrant e organizar coleções por projeto/obra.

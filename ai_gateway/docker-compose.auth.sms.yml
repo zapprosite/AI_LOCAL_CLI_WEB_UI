@@ -1,0 +1,18 @@
+services:
+  auth_sms:
+    build: ../apps/auth-sms
+    image: local/auth-sms:latest
+    restart: unless-stopped
+    environment:
+      - JWT_SECRET=${OPENWEBUI_JWT_SECRET:-dev-secret-change-me}
+      - JWT_AUDIENCE=openwebui
+      - JWT_ISSUER=auth-sms
+      - JWT_EXPIRES=3600
+      - OPENWEBUI_URL=http://openwebui:8080/
+    ports:
+      - "8081:8081"
+    networks: [ai_stack_net]
+
+networks:
+  ai_stack_net:
+    external: true
