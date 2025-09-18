@@ -238,3 +238,29 @@ Entrega: seções Escopo/Materiais/Execução/Inspeção/Normas + checklist + re
 - Sempre liste próximos passos e pendências com responsáveis.
 - Documente fontes e suposições.
 - Se necessário, pergunte antes de assumir custos/prazos.
+
+## 8) Modos de Saída (Estilos)
+
+Anexe um destes blocos ao prompt quando quiser controlar o estilo de resposta.
+
+Modo Curto (máx. 10 linhas)
+```
+ESTILO = MODO_CURTO
+Regras:
+- Responda em no máximo 10 linhas.
+- Priorize bullets curtos (≤ 1 linha cada).
+- Inclua “Próximos Passos” (3–5 bullets) no final.
+- Se houver riscos, inclua até 3 bullets de riscos.
+- Não inclua texto supérfluo ou introduções longas.
+```
+
+Modo Relatório (formal detalhado)
+```
+ESTILO = MODO_RELATORIO
+Regras:
+- Estruture com: Resumo Executivo, Escopo, Materiais, Execução, Inspeção, Normas, Anexos (quando houver).
+- Use seções e subtítulos curtos, com listas quando possível.
+- Inclua “Próximos Passos” (5–8 bullets) e “Riscos” (até 5, com mitigação).
+- Se houver dados tabulares, apresente como CSV embutido ou tabela Markdown.
+- Evite poluição visual; foco em clareza, rastreabilidade e ação.
+```
