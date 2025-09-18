@@ -1,0 +1,28 @@
+# ai_gateway/litellm.router.fb.yml
+# Minimal LiteLLM router config for fallback (uses local Ollama to ensure availability)
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
+  telemetry: false
+  num_retries: 3
+  drop_params: true
+  timeout: 180
+
+server_settings:
+  host: 0.0.0.0
+  port: 4000
+
+model_list:
+  - model_name: code.hybrid
+    litellm_params:
+      model: "ollama/qwen2.5-coder:14b"
+      api_base: "http://ollama:11434"
+
+  - model_name: docs.hybrid
+    litellm_params:
+      model: "ollama/qwen2.5-coder:14b"
+      api_base: "http://ollama:11434"
+
+  - model_name: search.hybrid
+    litellm_params:
+      model: "ollama/qwen2.5-coder:14b"
+      api_base: "http://ollama:11434"

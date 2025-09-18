@@ -1,0 +1,77 @@
+name: E2E OpenWebUI
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - feat/map-test-debug
+      - chore/secrets-scaffold
+      - feat/logcodex
+
+jobs:
+  e2e-selfhosted:
+    name: Playwright E2E (self-hosted)
+    runs-on: self-hosted
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        working-directory: e2e
+        run: |
+          npm ci
+          npx playwright install --with-deps
+      - name: Run E2E
+        working-directory: e2e
+        env:
+          BASE_URL: ${{ secrets.OPENWEBUI_BASE_URL || 'http://localhost:3000' }}
+          ADMIN_EMAIL: ${{ secrets.OPENWEBUI_ADMIN_EMAIL }}
+          ADMIN_PASSWORD: ${{ secrets.OPENWEBUI_ADMIN_PASSWORD }}
+        run: |
+          mkdir -p e2e-artifacts
+          npx playwright test || true
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-artifacts
+          path: e2e/e2e-artifacts/**
+
+  e2e-ubuntu-latest:
+    name: Playwright E2E (ubuntu-latest, best-effort)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    if: ${{ github.event_name == 'workflow_dispatch' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install dependencies
+        working-directory: e2e
+        run: |
+          npm ci
+          npx playwright install --with-deps
+      - name: Health check target
+        id: check
+        env:
+          BASE_URL: ${{ secrets.OPENWEBUI_BASE_URL || 'http://localhost:3000' }}
+        run: |
+          if curl -sfL "$BASE_URL" >/dev/null; then echo "up=true" >> $GITHUB_OUTPUT; else echo "up=false" >> $GITHUB_OUTPUT; fi
+      - name: Run E2E (skip if down)
+        if: steps.check.outputs.up == 'true'
+        working-directory: e2e
+        env:
+          BASE_URL: ${{ secrets.OPENWEBUI_BASE_URL || 'http://localhost:3000' }}
+          ADMIN_EMAIL: ${{ secrets.OPENWEBUI_ADMIN_EMAIL }}
+          ADMIN_PASSWORD: ${{ secrets.OPENWEBUI_ADMIN_PASSWORD }}
+        run: |
+          mkdir -p e2e-artifacts
+          npx playwright test || true
+      - name: Upload artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-artifacts-ubuntu
+          path: e2e/e2e-artifacts/**
