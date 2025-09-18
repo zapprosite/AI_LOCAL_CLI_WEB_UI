@@ -15,62 +15,8 @@ ai_gateway/logs/
 __pycache__/
 *.pyc
 node_modules/
-# Python virtual environments (global & nested)
-.venv/
-venv/
-env/
-**/.venv/
-**/venv/
-**/env/
-# Worktrees e labs efêmeros
-_worktrees/
-_labs/
-# Python cache
-__pycache__/
-*.pyc
-# Logs e artefatos locais
-_logs/
-pr_artifacts/
-*.tgz
-# Venvs (global e nested) – reforço
-.venv/
-venv/
-env/
-**/.venv/
-**/venv/
-**/env/
-# Python virtual environments (global & nested)
-.venv/
-venv/
-env/
-**/.venv/
-**/venv/
-**/env/
-# Worktrees e labs efêmeros
-_worktrees/
-_labs/
-# Python cache
-__pycache__/
-*.pyc
-# Logs e artefatos locais
-_logs/
-pr_artifacts/
-*.tgz
-# Venvs (global e nested) – reforço
-.venv/
-venv/
-env/
-**/.venv/
-**/venv/
-**/env/
-# Logs e artefatos locais
-_logs/
-pr_artifacts/
-*.tgz
-# Venvs (global e nested) – reforço
-.venv/
-venv/
-env/
-**/.venv/
-**/venv/
-**/env/
+
+# secrets & keys (reforço)
+*.pem
+*.key
+*.p12
